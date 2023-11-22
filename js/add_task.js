@@ -155,7 +155,7 @@ function colorSearch(value) {
 function saveSubtask() {
     let task = document.getElementById('subtask-value');
     let list = document.getElementById('subtask-overview');
-    list.innerHTML += `
+    list.innerHTML += /*html*/ `
         <li class="subtask-item">
             <input type="checkbox" id="${task.value}" name="${task.value}" value="subtask3.value">
             <label for="${task.value}">${task.value}</label>

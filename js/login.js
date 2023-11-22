@@ -28,7 +28,7 @@ function renderLogin() {
 }
 
 function generateLogin() {
-    return `
+    return /*html*/`
     <div class="loginForm">
         <div class="loginHeader">
             <h1>Log in</h1>
@@ -62,7 +62,7 @@ function forgotPassword() {
 }
 
 function generateForgotPassword() {
-    return `
+    return /*html*/ `
     <div class="loginForm">
         <img class="arrow" src="./assets/img/icons/backArrow.svg" onclick="renderLogin()">
         <div class="loginHeader">
@@ -88,7 +88,7 @@ function renderSignup() {
 }
 
 function generateSignup() {
-    return `
+    return /*html*/`
     <div class="loginForm">
         <img class="arrow" src="./assets/img/icons/backArrow.svg" onclick="renderLogin()">
         <div class="loginHeader">

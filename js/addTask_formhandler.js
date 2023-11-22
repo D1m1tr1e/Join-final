@@ -82,9 +82,9 @@ function renderContacts() {
     list.innerHTML = '';
     for (let i = 0; i < loadedContacts.length; i++) {
         const contact = loadedContacts[i];
-        list.innerHTML += `<div class="contact-item"><label for="${contact.name}">${contact.name}<input class="dropdown-check" type="checkbox" id="${contact.name}"></label></div>`
+        list.innerHTML += /*html*/ `<div class="contact-item"><label for="${contact.name}">${contact.name}<input class="dropdown-check" type="checkbox" id="${contact.name}"></label></div>`
     }
-    list.innerHTML += `<div class="contact-item" onclick="inviteContact()">Invite new contact<span><img class="addcontact-li" src="../img/icons/contacts-black.svg"></span></div>`
+    list.innerHTML += /*html*/ `<div class="contact-item" onclick="inviteContact()">Invite new contact<span><img class="addcontact-li" src="../img/icons/contacts-black.svg"></span></div>`
 }
 
 function renderEditableContacts(taskId) {
@@ -92,9 +92,9 @@ function renderEditableContacts(taskId) {
     list.innerHTML = '';
     for (let i = 0; i < loadedContacts.length; i++) {
         const contact = loadedContacts[i];
-        list.innerHTML += `<div class="contact-item"><label for="${contact.name}">${contact.name}<input class="dropdown-check" type="checkbox" id="${contact.name}"></label></div>`
+        list.innerHTML += /*html*/ `<div class="contact-item"><label for="${contact.name}">${contact.name}<input class="dropdown-check" type="checkbox" id="${contact.name}"></label></div>`
     }
-    list.innerHTML += `<div class="contact-item" onclick="inviteContactEdit(${taskId})">Invite new contact<span><img class="addcontact-li" src="../img/icons/contacts-black.svg"></span></div>`
+    list.innerHTML += /*html*/ `<div class="contact-item" onclick="inviteContactEdit(${taskId})">Invite new contact<span><img class="addcontact-li" src="../img/icons/contacts-black.svg"></span></div>`
 }
 
 /**
@@ -229,7 +229,7 @@ function saveNewCat() {
 function showNewCat() {
     let element = categorys[categorys.length - 1];
     let placeholder = document.getElementById('category-input');
-    placeholder.innerHTML = `
+    placeholder.innerHTML = /*html*/`
     <div class="">${element.name}<div class="${element.color}"></div></div><span class="active-arrow">&lt;</span>
     `
     placeholder.classList.add('cat-picked');
@@ -341,7 +341,7 @@ function renderCategorys() {
 
     catContainer.innerHTML = '<li onclick="createCategory()">Add new category</li>';
     for (let i = 0; i < categorys.length; i++) {
-        catContainer.innerHTML += `
+        catContainer.innerHTML += /*html*/`
             <li onclick="chosenCategory('${categorys[i].name}')">${categorys[i].name}<div class="${categorys[i].color}"></div></li>
         `
     }

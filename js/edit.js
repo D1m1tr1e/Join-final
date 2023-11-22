@@ -12,7 +12,7 @@ function searchTask(id) {
 }
 
 function searchTodoTemplate(todoContainer, todoTasks, i) {
-    todoContainer.innerHTML += `
+    todoContainer.innerHTML += /*html*/`
             <div class="box-task-design" draggable="true" onclick="openTaskDetails('${todoTasks[i]['task-id']}')" ondragstart="startDragging(${todoTasks[i]['task-id']})" id="taskId${todoTasks[i]["task-id"]}">
                 <div class="category ${todoTasks[i].catColor}Cat">
                     <h3>${todoTasks[i].category}</h3>
@@ -72,7 +72,7 @@ async function deleteTask(taskID) {
 }
 
 function templateRenderSearch(progressContainer, progressTasks, i) {
-    progressContainer.innerHTML += `
+    progressContainer.innerHTML += /*html*/ `
             <div class="box-task-design" draggable="true" onclick="openTaskDetails('${progressTasks[i]['task-id']}')" ondragstart="startDragging(${progressTasks[i]['task-id']})" id="taskId${progressTasks[i]["task-id"]}">
                 <div class="category ${progressTasks[i].catColor}Cat">
                     <h3>${progressTasks[i].category}</h3>
@@ -112,7 +112,7 @@ function renderSearchProgress(search) {
 }
 
 function templateFeedbackSearch(feedbackContainer, feedbackTasks, i) {
-    feedbackContainer.innerHTML += `
+    feedbackContainer.innerHTML += /*html*/ `
             <div class="box-task-design" draggable="true" onclick="openTaskDetails('${feedbackTasks[i]['task-id']}')" ondragstart="startDragging(${feedbackTasks[i]['task-id']})" id="taskId${feedbackTasks[i]["task-id"]}">
                 <div class="category ${feedbackTasks[i].catColor}Cat">
                     <h3>${feedbackTasks[i].category}</h3>
@@ -152,7 +152,7 @@ function renderSearchFeedback(search) {
 }
 
 function templateSearchDone(doneContainer, doneTasks, i) {
-    doneContainer.innerHTML += `
+    doneContainer.innerHTML += /*html*/ `
             <div class="box-task-design" draggable="true" onclick="openTaskDetails('${doneTasks[i]['task-id']}')" ondragstart="startDragging(${doneTasks[i]['task-id']})" id="taskId${doneTasks[i]["task-id"]}">
                 <div class="category ${doneTasks[i].catColor}Cat">
                     <h3>${doneTasks[i].category}</h3>
@@ -192,7 +192,7 @@ function renderSearchDone(search) {
 }
 
 function editTaskTemplate(container, task, taskId) {
-    container.innerHTML = /*html*/`
+    container.innerHTML = /*html*/ `
         <div class="edit-task">
             <div class="close-btn-container" onclick="closeWindow()">
                 <img src="../../assets/img/icons/cross.svg" alt="Close button">
