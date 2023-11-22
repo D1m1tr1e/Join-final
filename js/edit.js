@@ -56,6 +56,7 @@ function renderSearchTodo(search) {
 function closeWindow() {
     document.getElementById('show-details').classList.add('d-none');
     document.getElementById('edit-task').classList.add('d-none');
+    uploadTasks();
 }
 
 
@@ -224,11 +225,6 @@ function editTaskTemplate(container, task, taskId) {
             <div class="contact-dropdown mg-dropdown">
                 <div class="form-title">Assigned to</div>
                 <div class="dropdown-placeholder border-color" id="contacts-input" onclick="toggleEditAssigning(${taskId})">Select contacts to assign<span>&lt;</span></div>
-                <input class="inviteContactInput d-none" placeholder="Enter email to invite contact" type="email">
-                <div class="inviteContactBtn d-none">
-                    <img src="../img/icons/cancel.svg" class="cancel" onclick="cancelInput('contact')">
-                    <img src="../img/icons/check_dark.svg" class="check" onclick="sendContactInvite()">
-                </div>
                 <div class="contacts-selection">
                     <div id="contact-selection" > 
                         <!-- Ab der zweiten div muss aus dem Contacts-Array generiert werden -->
@@ -236,7 +232,7 @@ function editTaskTemplate(container, task, taskId) {
                         <div class="contact-item"><label for="Testkontakt-2">Testkontakt 2<input class="dropdown-check" type="checkbox" id="Testkontakt-2"></label></div>
                         <div class="contact-item"><label for="Testkontakt-3">Testkontakt 3<input class="dropdown-check" type="checkbox" id="Testkontakt-3"></label></div>
                         <div class="contact-item"><label for="Testkontakt-4">Testkontakt 4<input class="dropdown-check" type="checkbox" id="Testkontakt-4"></label></div>
-                        <div class="contact-item" onclick="inviteContactEdit(taskId)">Invite new contact<span><img class="addcontact-li" src="../img/icons/contacts-black.svg"></span></div>
+                        
                     </div>
                 </div>
                 <div class="contact-mobile-edit">${showResponsiveWorker(task)}</div>
@@ -249,6 +245,7 @@ function editTaskTemplate(container, task, taskId) {
     <div class="popup-bg" onclick="closeWindow()"></div>
     `;
 }
+/*
 
 /**
  * this function renders the edit view of tasks
@@ -263,24 +260,6 @@ function editTask(taskId) {
     container.innerHTML = '';
     editTaskTemplate(container, task, taskId);
     showPrioStatusEditView(taskId);
-}
-
-/**
- * function to show invite-input for new contact. it replaces the placeholder an shows an actual input field
- * 
- * @param {number} taskId - unique id of task
- */
-function inviteContactEdit(taskId) {
-    toggleEditAssigning(taskId);
-    let placeholder = document.getElementById('contacts-input');
-    let input = document.querySelector('.inviteContactInput');
-    let buttons = document.querySelector('.inviteContactBtn');
-
-    placeholder.classList.add('d-none');
-    input.classList.remove('d-none');
-    input.classList.add('whundred')
-    buttons.classList.remove('d-none');
-    input.focus();
 }
 
 /**
@@ -374,5 +353,6 @@ async function saveEditData(taskId, editTitle, editDescription, editDueDate) {
     task['assignedTo'] = getAssignedContacts();
     await uploadTasks();
     await initBoard();
+    uploadTasks();
     closeWindow();
 }

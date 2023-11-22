@@ -62,16 +62,15 @@ function toggleEditAssigning(taskId) {
 
 function preCheckedContacts(taskId) {
     const assignings = allTasks[taskId]['assignedTo'];
-    let selection = document.querySelectorAll('.contact-item');
-    for (let i = 0; i < selection.length - 1; i++) {
-        const contact = selection[i].innerText; // Name des Kontakts aus allen Kontakten
-        for (let j = 0; j < assignings.length; j++) {
-            let curAssigning = assignings[j];   // ein bereits zugewiesener Kontakt
-            if (contact === curAssigning) {
-                document.getElementById(curAssigning).checked = true;
-            }
+    assignings.forEach(contact => {
+        let idWithoutWhitespace = contact.replace(/\s/g, '');
+        if (document.getElementById(idWithoutWhitespace)) {
+            document.getElementById(idWithoutWhitespace).checked = true;
+            console.log(document.getElementById(idWithoutWhitespace));
+        } else {
+            console.log('error');
         }
-    }
+    });
 }
 
 /**
@@ -84,7 +83,6 @@ function renderContacts() {
         const contact = loadedContacts[i];
         list.innerHTML += /*html*/ `<div class="contact-item"><label for="${contact.name}">${contact.name}<input class="dropdown-check" type="checkbox" id="${contact.name}"></label></div>`
     }
-    list.innerHTML += /*html*/ `<div class="contact-item" onclick="inviteContact()">Invite new contact<span><img class="addcontact-li" src="../img/icons/contacts-black.svg"></span></div>`
 }
 
 function renderEditableContacts(taskId) {
@@ -92,9 +90,9 @@ function renderEditableContacts(taskId) {
     list.innerHTML = '';
     for (let i = 0; i < loadedContacts.length; i++) {
         const contact = loadedContacts[i];
-        list.innerHTML += /*html*/ `<div class="contact-item"><label for="${contact.name}">${contact.name}<input class="dropdown-check" type="checkbox" id="${contact.name}"></label></div>`
+        let idWithoutWhitespace = contact.name.replace(/\s/g, '');
+        list.innerHTML += /*html*/ `<div class="contact-item"><label for="${contact.name}">${contact.name}<input class="dropdown-check" type="checkbox" id="${idWithoutWhitespace}"></label></div>`
     }
-    list.innerHTML += /*html*/ `<div class="contact-item" onclick="inviteContactEdit(${taskId})">Invite new contact<span><img class="addcontact-li" src="../img/icons/contacts-black.svg"></span></div>`
 }
 
 /**
@@ -159,6 +157,7 @@ function cancelInput(formElement) {
 /**
  * function to show input field for new contact invite
  */
+
 function inviteContact() {
     toggleAssigning();
     let placeholder = document.getElementById('contacts-input');
@@ -279,7 +278,7 @@ function resetPrio() {
  * function to change the placeholder color when date is picked
  */
 function dateColor() {
-   document.querySelector('#due-date').style.color = "black";
+    document.querySelector('#due-date').style.color = "black";
 }
 
 /**
