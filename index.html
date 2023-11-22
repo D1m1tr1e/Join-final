@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Kanban Projectmanagement</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo-on-dark-bg.svg">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./css/addTask.css">
+    <link rel="stylesheet" href="./css/legal_and_privacy_style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/add_task.js"></script>
+    <script src="./js/content_loader.js"></script>
+    <script src="./main.js"></script>
+    <script src="./js/login.js"></script>
+
+</head>
+<body onload="initLogin()">
+    <div class="login-bg">
+        <img src="./assets/img/logo_main.svg" class="logoStart" alt="img">
+        <section class="d-none sign-up">
+            <p>Not a Join-User?</p><div class="login-btn" onclick="renderSignup()">Sign up</div>
+        </section>
+        <section id ="loginRender" class="d-none login-flex">
+        </section>
+    </div>
+</body>
+</html>

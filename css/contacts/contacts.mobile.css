@@ -1,0 +1,265 @@
+@media (max-width: 1360px) {
+    .addContactButton {
+        bottom: 7rem !important;
+    }
+
+    contact-list {
+        height: calc(100vh - 90px - 78.5px - 16px) !important;
+    }
+}
+
+@media (max-width: 1170px) {
+    .rightSide {
+        padding-left: 1.2rem !important;
+        padding-right: 1.2rem !important;
+        padding-top: 1.62rem !important;
+        padding-bottom: 1rem !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    /* OVERLAY START */
+    dialog {
+        width: 100% !important;
+        height: 100vh !important;
+        max-width: unset !important;
+        max-height: unset !important;
+        margin: 0 !important;
+    }
+
+    .newContactModal {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh !important;
+        border-radius: 0 !important;
+    }
+
+    /* OVERLAY END */
+    /* LEFT SIDE START*/
+    .leftSide {
+        border-radius: 0 !important;
+        align-items: center;
+        height: 50vh;
+        padding: 0;
+    }
+
+    .leftSide img {
+        display: none;
+    }
+
+    .close {
+        position: fixed;
+        right: 0.96rem;
+        top: 1.62rem;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(103%) contrast(103%);
+    }
+
+    /* OVERLAY END */
+    /* RIGHT SIDE START */
+    .rightSide {
+        position: relative;
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        height: 50vh;
+        padding-top: 3.06rem;
+    }
+
+    .formCloseAndButtons form {
+        align-items: center;
+    }
+
+    .formCloseAndButtons form input {
+        margin: 0;
+    }
+
+    .human {
+        position: absolute;
+        top: -100px;
+    }
+
+    .cancel {
+        display: none;
+    }
+
+    /* RIGHT SIDE END */
+    /*CONTACTDETAILS START*/
+    [contact-details] {
+        justify-content: center;
+    }
+
+    contact-details {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-left: 3.06rem !important;
+    }
+
+    .firstRow {
+        width: 462px;
+        justify-content: start;
+        margin: 0 !important;
+    }
+
+    .secondRow {
+        width: 462px;
+        justify-content: start;
+    }
+
+    .thirdRow {
+        width: 462px;
+        justify-content: start !important;
+    }
+
+    .contactDetailsTitle {
+        margin-top: 1.19rem;
+        flex-direction: column;
+        align-items: start !important;
+        gap: 0.5rem !important;
+    }
+
+    .contactDetailsTitle img {
+        transform: rotate(90deg) translate(0, -30px);
+        order: 3;
+    }
+
+    .secondRow .imageButtons {
+        display: none;
+    }
+
+    .arrowButton {
+        cursor: pointer;
+        display: block !important;
+        position: absolute;
+        top: 8rem;
+        right: 2rem;
+    }
+
+    .trashButton {
+        cursor: pointer;
+        display: block !important;
+        position: absolute;
+        right: 2rem;
+        bottom: 11.19rem;
+    }
+
+    .editContactMobile {
+        display: block !important;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 2rem;
+        bottom: 7.06rem;
+    }
+
+    .dpNoneMobile {
+        display: none !important;
+    }
+
+    /*CONTACTDETAILS END*/
+    /*CONTACTLIST START*/
+    [contact-list] {
+        background-color: white;
+        max-width: unset !important;
+    }
+
+    .contacts {
+        height: calc(100vh - 90px - 78.5px) !important;
+    }
+
+    contact-list {
+        margin-top: 5.06rem;
+        height: calc(100vh - 90px - 78.5px - 16px - 5.06rem) !important;
+        max-width: unset !important;
+    }
+
+    .addContactButton {
+        top: 105px;
+        bottom: unset !important;
+        right: 1rem !important;
+    }
+}
+
+/*CONTACTLIST END*/
+
+
+@media (max-width: 550px) {
+    /* CONTACT DETAILS START*/
+    .contactDetailsName {
+        font-size: 2rem !important;
+        display: flex;
+        flex-direction: column;
+        max-width: 100px;
+    }
+
+    .contactDetailsFirstLetters {
+        width: 6rem !important;
+        height: 6rem !important;
+        min-width: 6rem !important;
+        min-height: unset !important;
+    }
+
+    .human {
+        top: -90px;
+        width: 102px;
+        height: 102px;
+        min-width: unset !important;
+        min-height: unset !important;
+    }
+
+    contact-details {
+        overflow-y: scroll;
+        padding-bottom: 16px;
+        gap: 0 !important;
+        margin-left: 20px !important;
+    }
+
+    contact-details h2 {
+        font-size: 3rem !important;
+    }
+
+    contact-details p {
+        font-size: 1rem !important;
+    }
+
+    .firstRow {
+        max-width: 300px !important;
+    }
+
+    .secondRow {
+        max-width: 300px !important;
+    }
+
+    .thirdRow {
+        max-width: 300px !important;
+    }
+
+    /* CONTACT DETAILS END*/
+    /* CONTACT LIST START*/
+
+
+}
+
+@media (max-width: 430px) {
+
+    contact-list {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .rightSide input {
+        width: 20rem !important;
+    }
+
+    .rightSide form {
+        gap: 1.8rem !important;
+    }
+
+    .leftSide .addContactTitle {
+        font-size: 2.8rem;
+    }
+
+    .leftSide .tasksAreBetterWithATeam {
+        font-size: 1.3rem;
+    }
+}

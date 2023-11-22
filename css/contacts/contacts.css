@@ -1,0 +1,15 @@
+.contacts {
+    display: flex;
+    justify-content: left;
+}
+
+.addContactButton {
+    position: absolute;
+    right: 2.95rem;
+    bottom: 4.19rem;
+}
+
+.addContactButton img {
+    height: 1.5625rem;
+    width: 1.73575rem;
+}

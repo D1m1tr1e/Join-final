@@ -1,0 +1,104 @@
+@media (max-width: 1360px) {
+    body {
+        max-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-bar {
+        top: unset;
+        bottom: 0;
+        width: 100%;
+        height: unset;
+    }
+
+    .left-bar .logo {
+        display: none;
+    }
+
+    .left-bar .main-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: space-evenly;
+        align-items: stretch;
+        flex: 1;
+        height: 78.5px;
+    }
+
+    .left-bar .legal-menu {
+        display: none;
+    }
+
+    .left-bar a {
+        flex-direction: column;
+        padding: unset;
+        width: unset;
+        height: unset;
+        justify-content: center;
+        flex: 1;
+        gap: 14px;
+        padding-top: 10.5px;
+    }
+
+    .left-bar .aligning img {
+        max-width: 30px;
+        max-height: 30px;
+    }
+
+    .right-bar {
+        width: unset;
+        margin: unset;
+        max-height: unset;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-bar {
+        position: unset;
+        width: unset;
+    }
+
+    #content {
+        height: calc(100vh - 78.5px - 90px);
+        margin: 0;
+        width: unset;
+        overflow-y: scroll;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-menu a{
+        font-size: .9rem !important;
+    }
+
+    #content{
+        height: calc(100vh - 71.5px - 90px);
+    }
+
+    .header-disign{
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (max-height: 950px) {
+    .loginForm {
+        width: 700px !important;
+    }
+    .sign-up {
+        top: -10px !important;
+        right: 14px;
+    }
+}
+
+@media (max-height: 1130px){
+    .contact-mobile-detail{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .responsible-worker{
+        flex: 0 0 50%;
+        box-sizing: border-box;
+    }
+
+}

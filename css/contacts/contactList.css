@@ -1,0 +1,18 @@
+contact-list {
+    background-color: white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: calc(100vh - 90px - 1rem);
+    max-width: 28.3125rem;
+    overflow-y: scroll;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+[contact-list] {
+    display: flex;
+    flex: 1;
+    max-width: 28.3125rem;
+}

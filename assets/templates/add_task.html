@@ -1,0 +1,132 @@
+<div class="toFlexInTheMiddle">
+    <div class="taskarea">
+        <div class="content-wrapper">
+            <div class="mobile-HL">Kanban Project Management Tool</div>
+            <h1>Add Task</h1>
+            <div class="addtask-form-container">
+                <div id="layerForContactDD" class="d-none" onclick="toggleAssigning()"></div>
+                <div id="layerForCats" class="d-none" onclick="toggleDropdown()"></div>
+                <!-- left side -->
+                <form onsubmit="" class="left-form">
+                    <div class="form-item">
+                        <label for="title">Title</label>
+                        <input placeholder="Enter a title" id="title-input">
+                        <div class="invalid d-none" id="title-validation">This field is required</div>
+                    </div>
+                    <div class="form-item">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" placeholder="Enter a description"></textarea>
+                        <div class="invalid d-none" id="description-validation">This field is required</div>
+                    </div>
+                    <div class="form-item">
+                        <div class="dropdown">
+                            <div class="form-title">Choose Category</div>
+                            <div class="dropdown-placeholder" id="category-input" onclick="toggleDropdown()">Choose Category<span>&lt;</span></div>
+                            <div class="invalid d-none" id="category-validation">This field is required</div>
+                            <input class="addCategoryInput d-none" placeholder="Enter category name" type="text">
+                            <div class="createCatBtn d-none">
+                                <img src="../img/icons/cancel.svg" class="cancel" onclick="cancelInput('cat')">
+                                <img src="../img/icons/check_dark.svg" class="check" onclick="saveNewCat()">
+                            </div>
+                            <div class="category-colors d-none">
+                                <div class="purple" onclick="pickCatColor('purple')"></div>
+                                <div class="red" onclick="pickCatColor('red')"></div>
+                                <div class="green" onclick="pickCatColor('green')"></div>
+                                <div class="orange" onclick="pickCatColor('orange')"></div>
+                                <div class="pink" onclick="pickCatColor('pink')"></div>
+                                <div class="blue" onclick="pickCatColor('blue')"></div>
+                            </div>
+                            <div class="item-selection">
+                                <ul id="category-selection">
+                                    <li onclick="createCategory()">Add new category</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="contact-dropdown">
+                            <div class="form-title">Assigned to</div>
+                            <div class="dropdown-placeholder" id="contacts-input" onclick="toggleAssigning()">Select contacts to assign<span>&lt;</span></div>
+                            <input class="inviteContactInput d-none" placeholder="Enter email to invite contact" type="email">
+                            <div class="inviteContactBtn d-none">
+                                <img src="../img/icons/cancel.svg" class="cancel" onclick="cancelInput('contact')">
+                                <img src="../img/icons/check_dark.svg" class="check" onclick="sendContactInvite()">
+                            </div>
+                            <div class="contacts-selection">
+                                <div id="contact-selection" >
+                                    <!-- Ab der zweiten div muss aus dem Contacts-Array generiert werden -->
+                                    <div class="contact-item"><label for="Testkontakt-1">Testkontakt 1<input class="dropdown-check" type="checkbox" id="Testkontakt-1"></label></div>
+                                    <div class="contact-item"><label for="Testkontakt-2">Testkontakt 2<input class="dropdown-check" type="checkbox" id="Testkontakt-2"></label></div>
+                                    <div class="contact-item"><label for="Testkontakt-3">Testkontakt 3<input class="dropdown-check" type="checkbox" id="Testkontakt-3"></label></div>
+                                    <div class="contact-item"><label for="Testkontakt-4">Testkontakt 4<input class="dropdown-check" type="checkbox" id="Testkontakt-4"></label></div>
+                                    <div class="contact-item" onclick="inviteContact()">Invite new contact<span><img class="addcontact-li" src="../img/icons/contacts-black.svg"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="vertical-divider"></div>
+
+
+                <!-- right side -->
+
+
+                <form onsubmit="" class="right-form">
+                    <div class="form-item">
+                        <label for="due-date">Due Date</label>
+                        <input name="due-date"  type="date" class="date-input" id="due-date" onchange="dateColor()">
+                        <div class="invalid d-none" id="date-validation">This field is required</div>
+                    </div>
+                    <div class="form-item">
+                        <div class="form-title">Prio</div>
+                        <div class="prio-buttons">
+                            <div class="urgent" id="urgent" onclick="pickPrio('urgent')">
+                                Urgent <span class="prio-img"><img src="../img/icons/urgent-nofill-orange.svg" alt=""></span>
+                            </div>
+                            <div class="medium" id="medium" onclick="pickPrio('medium')">
+                                Medium <span class="prio-img"><img src="../img/icons/medium_nofill_orange.svg" alt=""></span>
+                            </div>
+                            <div class="low" id="low" onclick="pickPrio('low')">
+                                Low <span class="prio-img"><img src="../img/icons/low_nofill_green.svg" alt=""></span>
+                            </div>
+                        </div>
+                        <div class="invalid d-none" id="prio-validation">This field is required</div>
+                    </div>
+
+
+                    <div class="form-item">
+                        <div class="dropdown">
+                            <div class="form-title">Subtasks</div>
+                            <div class="dropdown-placeholder" id="subtask-placeholder" onclick="changeFormIcons('subtask')">Add Subtask<span>&plus;</span></div>
+                            <input type="text" class="d-none subtask-input" id="subtask-value" placeholder="Enter a title">
+                            <div class="addTaskBtns d-none">
+                                <img src="../img/icons/cancel.svg" class="cancel" onclick="cancelInput('subtask')">
+                                <img src="../img/icons/check_dark.svg" class="check" onclick="saveSubtask()">
+                            </div>
+                        </div>
+                        <ul class="subtask-list" id="subtask-overview">
+                        </ul>
+                    </div>
+                    <div class="form-item">
+                        <div class="add-btn-wrapper">
+                            <div class="clear-btn secondary-btn" onclick="clearAll()">Clear <span>&cross;</span></div>
+                            <div class="submit main-btn" onclick="validateForm()">Add task <span>&check;</span></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        Task added to clipboard <span class="icon"><img src="../img/icons/board.svg"></span>
+    </div>
+
+    <div class="mobile-submit" id="mobile-sub">
+        <div class="submit main-btn" onclick="validateForm()">Create task <span>&check;</span></div>
+    </div>
+    <div class="mobile-close d-none" id="mobile-close">
+        <div class="clear-btn secondary-btn" onclick="switchModal('add_task.html', 'addtask'), initBoard()">Close<span>&cross;</span></div>
+    </div>
+</div>

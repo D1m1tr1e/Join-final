@@ -1,0 +1,71 @@
+<main class="summary-container" onload="initSummary()">
+    <!--Header Sektion-->
+    <div class="left-content">
+
+        <header class="header-disign">
+            <div>
+                <h2>Summary</h2>
+            </div>
+            <div class="line-header-color">
+                <h3>Everything in a nutshell!</h3>
+            </div>
+        </header>
+
+        <!--Task Sektion-->
+        <div class="direction-all-tasks">
+            <div class="box-design counter wd-upper-tasks" id="taskSum" onclick="changeContentHTML('../templates/board.html')">
+                <p>5</p>
+                <span>Tasks in <br> Board</span>
+            </div>
+            <div class="box-design counter wd-upper-tasks" id="progressSum" onclick="changeContentHTML('../templates/board.html')">
+                <p>2</p>
+                <span>Tasks in <br> Progress</span>
+            </div>
+            <div class="box-design counter wd-upper-tasks" id="feedbackSum" onclick="changeContentHTML('../templates/board.html')">
+                <p>2</p>
+                <span>Awaiting <br> Feedback</span>
+            </div>
+        </div>
+        <div class="urgent-tasks-container box-design">
+            <div class="icons-container">
+                <img src="../../assets/img/icons/urgend.svg" alt="Taks status" />
+            </div>
+            <div class="border-urgend-task urgunt-task-position">
+                <p>1</p>
+                <span>Urgent</span>
+            </div>
+            <div class="deadline-task-position">
+                <span><b>October 16, 2022</b></span> <br>
+                <span class="label">Upcoming Deadline</span>
+            </div>
+        </div>
+        <div class="direction-all-tasks">
+            <div class="box-design wd-lower-tasks">
+                <div class="icons-container">
+                    <img class="task-image" src="../../assets/img/icons/pen.svg" alt="Tasks in progress dark" />
+                    <img class="hover-image" src="../../assets/img/icons/pen-white.svg" alt="Tasks in progres bride" />
+                </div>
+                <div class="counter">
+                    <p>1</p>
+                    <span>To-Do</span>
+                </div>
+            </div>
+            <div class="box-design wd-lower-tasks">
+                <div class="icons-container">
+                    <img class="task-image" src="../../assets/img/icons/check.svg" alt="Taks finished dark" />
+                    <img class="hover-image" src="../../assets/img/icons/check-white.svg" alt="Taks finished bride" />
+                </div>
+                <div class="counter" id="done-counter">
+                    <p>1</p>
+                    <span>Done</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Greeting Sektion-->
+    <div class="right-content">
+        <h4>Good morning,</4>
+        <h5>Max Mustermann</h5>
+    </div>
+</main>

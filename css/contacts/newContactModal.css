@@ -1,0 +1,143 @@
+.newContactModal {
+    height: 37.125rem;
+    border-radius: 1.875rem;
+    display: flex;
+    background: #fff;
+}
+
+/*LEFT SIDE START*/
+
+.leftSide {
+    background: #2a3647;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    padding: 4.125rem 2.875rem;
+    border-top-left-radius: 1.875rem;
+    border-bottom-left-radius: 1.875rem;
+}
+
+.leftSide p {
+    margin: 0;
+}
+
+.leftSide img {
+    height: 4.15519rem;
+    width: 3.44519rem;
+}
+
+.addContactTitle {
+    color: #fff;
+    font-size: 3.8125rem;
+    font-weight: 700;
+}
+
+.tasksAreBetterWithATeam {
+    color: #fff;
+    font-size: 1.6875rem;
+}
+
+.blueLine {
+    width: 90px;
+    border: 3px solid #29abe2;
+}
+
+/*LEFT SIDE END*/
+
+/*RIGHT SIDE START*/
+
+.rightSide {
+    display: flex;
+    align-items: center;
+    gap: 5.25rem;
+    padding-left: 4.37rem;
+    padding-right: 3.46rem;
+    padding-top: 1.62rem;
+    padding-bottom: 6.5rem;
+}
+
+.human {
+    min-width: 7.5rem;
+    min-height: 7.5rem;
+    border-radius: 7.5rem;
+    border: 3px solid #fff;
+    background: #d1d1d1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formCloseAndButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.rightSide form {
+    display: flex;
+    flex-direction: column;
+    gap: 3.06rem;
+}
+
+.rightSide form .buttons {
+    display: flex;
+    gap: 1.56rem;
+}
+
+.rightSide form input {
+    width: 26.375rem;
+    font-size: 1.3125rem;
+    padding-right: 3rem;
+}
+
+.rightSide form input::placeholder {
+    color: #d1d1d1;
+    font-size: 1.3125rem;
+}
+
+.rightSide form img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.close {
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+}
+
+[type="number"] {
+    background-image: url("../../assets/img/icons/phone.svg");
+    background-repeat: no-repeat;
+    background-position: 381px;
+}
+
+/* removing arrows from number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+[type="name"] {
+    background-image: url("../../assets/img/icons/darkHuman.svg");
+    background-repeat: no-repeat;
+    background-position: 381px;
+}
+
+[type="email"] {
+    background-image: url("../../assets/img/icons/mail.svg") !important;
+    background-repeat: no-repeat;
+    background-position: 381px;
+}
+
+/*RIGHT SIDE END*/

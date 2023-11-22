@@ -1,0 +1,32 @@
+<div class="newContactModal">
+    <div class="leftSide">
+        <img src="../img/logo-on-dark-bg.svg" alt="" />
+        <p class="addContactTitle">Edit Contact</p>
+        <div class="blueLine"></div>
+    </div>
+    <div class="rightSide">
+        <div class="human">
+            <img src="../img/icons/whiteHuman.svg" alt="" />
+        </div>
+        <div class="formCloseAndButtons">
+            <div onclick="switchModal()" class="close">
+                <img src="../img/icons/cross.svg" alt="" />
+            </div>
+            <form onsubmit="saveContact(event)">
+                <input required type="name" placeholder="Name" />
+                <input required type="number" placeholder="Phone" />
+                <input required type="email" placeholder="Email" />
+                <div class="buttons">
+                    <button onclick="deleteContact()" type="button" class="secondary-btn">
+                        Delete
+                        <img src="../img/icons/cross.svg" />
+                    </button>
+                    <button type="submit" class="main-btn">
+                        Save<img
+                            src="../img/icons/checkContact.svg"/>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

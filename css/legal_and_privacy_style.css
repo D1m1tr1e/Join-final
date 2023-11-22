@@ -1,0 +1,62 @@
+.info-container {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.pd-privacy{
+    padding: 0 3rem 3rem;
+}
+
+.pd-legal{
+    padding: 0 3rem 3rem;
+}
+
+.pd-help{
+    padding: 0 3rem 3rem;
+}
+
+.info-container- {
+    overflow-y: scroll;
+    height: calc(100vh - 90px);
+    padding-right: 5rem;
+    padding-left: 5rem;
+}
+
+.info-container h1{
+    font-size: 3.5rem;
+}
+
+.info-container 
+h2,
+h3,
+h4 {
+    color: rgb(61, 82, 109);
+}
+
+.info-container a{
+    color: rgb(82, 82, 82);
+    text-decoration: unset;
+}
+
+
+@media(max-width: 800px){
+    .pd-privacy{
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+
+    .pd-help{
+        padding: 0 2rem 2rem;
+    }
+    
+}
+
+@media(max-width: 490px){
+    .pd-legal{
+        padding: 1rem;
+    }
+
+    h1{
+        font-size: 32px !important;
+    }
+}

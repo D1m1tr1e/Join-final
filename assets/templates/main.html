@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Kanban Projectmanagement</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo-on-dark-bg.svg">
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="../../main.mobile.css">
+    <link rel="stylesheet" href="../../css/addTask.css">
+    <link rel="stylesheet" href="../../css/functional.addTask.css">
+    <link rel="stylesheet" href="../../css/mobile.addTask.css">
+    <link rel="stylesheet" href="../../css/legal_and_privacy_style.css">
+    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../css/summary.css">
+    <link rel="stylesheet" href="../../css/board.css">
+    <script src="../../js/add_task.js"></script>
+    <script src="../../js/edit.js"></script>
+    <script src="../../js/content_loader.js"></script>
+    <script src="../../main.js"></script>
+    <script src="../../js/login.js"></script>
+
+    <!-- contact -->
+    <link rel="stylesheet" href="../../css/contacts/contacts.mobile.css">
+    <link rel="stylesheet" href="../../css/contacts/contactCard.css">
+    <link rel="stylesheet" href="../../css/contacts/contactDetails.css">
+    <link rel="stylesheet" href="../../css/contacts/contactDivier.css">
+    <link rel="stylesheet" href="../../css/contacts/contactList.css">
+    <link rel="stylesheet" href="../../css/contacts/contacts.css">
+    <link rel="stylesheet" href="../../css/contacts/newContactModal.css">
+
+    <script src="../../js/contacts/contact.js"></script>
+    <script src="../../js/contacts/contactList.js"></script>
+    <script src="../../js/contacts/contactDetails.js"></script>
+    <script src="../../js/contacts.js"></script>
+</head>
+
+<body onload="init()">
+    <section class="right-bar">
+        <div class="top-bar">
+            <div class="user-info">
+                <div class="mobile-logo">
+                    <img src="../img/logo_main.svg" />
+                </div>
+                <div class="topbar-title">
+                    Kanban Project Management Tool
+                </div>
+                <div>
+                    <a onclick="changeContentHTML('../templates/help.html')">
+                        <img src="../img/icons/help.svg" class="bar-icon" />
+                    </a>
+                    <div class="divForProfileImage">
+                        <button class="profileImage"></button>
+                        <nav id="menu" class="hide-overlay-menu show-overlay-menu">
+                            <div class="menu-container">
+                                <a class="menu-link" href="../../index.html">
+                                    <span class="menu-button">Logout</span>
+                                </a>
+                                <a class="menu-link" onclick="changeContentHTML('../templates/legal_notice.html')">
+                                    <span class="menu-button">Legal Notice</span>
+                                </a>
+                                <a class="menu-link" onclick="changeContentHTML('../templates/privacy_policy.html')">
+                                    <span class="menu-button">Privacy Policy</span>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="content" w3-include-html="../../assets/templates/summary.html">
+            <!-- hier werden die jeweiligen Seiten reingerendert -->
+        </div>
+    </section>
+    <section class="left-bar">
+        <img src="../img/logo-on-dark-bg.svg" class="logo">
+        <div class="main-menu">
+            <a onclick="changeContentHTML('../templates/summary.html'), initSummary()">
+                <div class="aligning"><img src="../img/icons/summary.svg" class="menu-icon"></div>
+                Summary
+            </a>
+            <a onclick="changeContentHTML('../templates/board.html'), initBoard()">
+                <div class="aligning"><img src="../img/icons/board.svg" class="menu-icon"></div>
+                Board
+            </a>
+            <a onclick="changeContentHTML('../templates/add_task.html')">
+                <div class="aligning"><img src="../img/icons/addTask.svg" class="menu-icon"></div>
+                Add Task
+            </a>
+            <a onclick="loadContactContainer()">
+                <div class="aligning"><img src="../img/icons/contacts.svg" class="menu-icon"></div>
+                Contacts
+            </a>
+        </div>
+        <div class="legal-menu">
+            <a onclick="changeContentHTML('../templates/legal_notice.html')"><img src="../img/icons/info.svg"
+                    class="menu-icon">Legal Notice</a>
+            <a onclick="changeContentHTML('../templates/privacy_policy.html')"><img src="../img/icons/info.svg"
+                    class="menu-icon">Privacy Policy</a>
+        </div>
+    </section>
+    <dialog modal w3-include-html=""></dialog>
+    <script src="../../js/summary.js"></script>
+    <script src="../../js/board.js"></script>
+    <script src="../../js/addTask_formhandler.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!--*** Header normal view  ***-->
+<header class="borderHeader">
+    <div class="title">
+        <h1>Board</h1>
+    </div>
+    <div class="interactive-container">
+        <input class="lupe-img input-norm" type="text" placeholder="Find Task" id="search-task" onkeyup="searchTask('search-task')">
+        <button class="button-norm" onclick="switchModal('add_task.html', 'addtask'), initBoard(), setStatus('todo')">Add Task
+        <img src="../../assets/img/icons/cross-white.svg" alt="Cross Button">
+        </button>
+    </div>
+</header>
+<!--*** END Header normal view  ***-->
+
+<!--*** Boxtask Area ***-->
+<main class="board-container">
+
+    <!--*** Mobile Header only visiable @ width:720px ***-->
+    <div class="mobile-header">
+        <div class="title">
+            <h1>Board</h1>
+        </div>
+        <div class="button-mobile">
+            <button onclick="switchModal('add_task.html', 'addtask'), initBoard()">
+                <img src="../../assets/img/icons/plus-button-dark.svg" alt="Cross Button">
+            </button>
+        </div>
+    </div>
+    <div class="input-field-container">
+        <input type="text" placeholder="Find Task" class="lupe-img input-mobile" id="search-task-mobile" onkeyup="searchTask('search-task-mobile')">
+    </div>
+    <!--*** END Mobile Header ***-->
+
+    <div class="column-direction">
+        <div class="box-title">
+            <h2>To-Do</h2>
+            <div class="img-container" onclick="switchModal('add_task.html', 'addtask'), initBoard(), setStatus('todo')">
+                <img class="plus-icon" src="../../assets/img/icons/plus-button.svg" alt="Plus Button">
+                <img class="plus-icon-hover" src="../../assets/img/icons/plus-button-bride-blue.svg" alt="Plus Button">
+            </div>
+        </div>
+        <div class="box-overflow" id="todo-col" ondrop="moveTo('todo'), removeHighlight('todo-col')"
+            ondragleave="removeHighlight('todo-col')" ondragover="allowDrop(event); highlight('todo-col')">
+            <div class="box-task-design">
+                <div class="category"></div>
+                <div class="task-name"></div>
+                <div class="task-description"></div>
+                <div class="progress-bar"></div>
+                <div class="worker"></div>
+                <div class="worker"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column-direction">
+        <div class="box-title">
+            <h2>In Progress</h2>
+            <div class="img-container" onclick="switchModal('add_task.html', 'addtask'), initBoard(), setStatus('inProgress')">
+                <img class="plus-icon" src="../../assets/img/icons/plus-button.svg" alt="Plus Button">
+                <img class="plus-icon-hover" src="../../assets/img/icons/plus-button-bride-blue.svg" alt="Plus Button">
+            </div>
+        </div>
+        <div class="box-overflow" id="progress-col" ondrop="moveTo('inProgress'), removeHighlight('progress-col')"
+            ondragleave="removeHighlight('progress-col')" ondragover="allowDrop(event); highlight('progress-col')">
+            <div class="box-task-design">
+                <div class="category"></div>
+                <div class="task-name"></div>
+                <div class="task-description"></div>
+                <div class="progress-bar"></div>
+                <div class="worker"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column-direction">
+        <div class="box-title">
+            <h2>Awaiting Feedback</h2>
+            <div class="img-container" onclick="switchModal('add_task.html', 'addtask'), initBoard(), setStatus('feedback')">
+                <img class="plus-icon" src="../../assets/img/icons/plus-button.svg" alt="Plus Button">
+                <img class="plus-icon-hover" src="../../assets/img/icons/plus-button-bride-blue.svg" alt="Plus Button">
+            </div>
+        </div>
+        <div class="box-overflow" id="feedback-col" ondrop="moveTo('feedback'), removeHighlight('feedback-col')"
+            ondragleave="removeHighlight('feedback-col')" ondragover="allowDrop(event); highlight('feedback-col')">
+            <div class="box-task-design">
+                <div class="category"></div>
+                <div class="task-name"></div>
+                <div class="task-description"></div>
+                <div class="progress-bar"></div>
+                <div class="worker"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column-direction">
+        <div class="box-title">
+            <h2>Done</h2>
+            <div class="img-container" onclick="switchModal('add_task.html', 'addtask'), initBoard(), setStatus('done')">
+                <img class="plus-icon" src="../../assets/img/icons/plus-button.svg" alt="Plus Button">
+                <img class="plus-icon-hover" src="../../assets/img/icons/plus-button-bride-blue.svg" alt="Plus Button">
+            </div>
+        </div>
+        <div class="box-overflow" id="done-col" ondrop="moveTo('done'), removeHighlight('done-col')"
+            ondragleave="removeHighlight('feedback-col')" ondragover="allowDrop(event); highlight('done-col')">
+            <div class="box-task-design">
+                <div class="category"></div>
+                <div class="task-name"></div>
+                <div class="task-description"></div>
+                <div class="progress-bar"></div>
+                <div class="worker"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--*** END Boxtask Area ***-->
+
+<!--*** Card details view ***-->
+<div class="d-none" id="show-details"></div>
+<!--*** END Card details view ***-->
+
+<!--*** Card edit view ***-->
+<div class="d-none" id="edit-task"></div>
+<!--*** END Card edit view ***-->
+
+<div class="notification" id="notification">
+    Task added to clipboard <span class="icon"><img src="../img/icons/board.svg"></span>
+</div>

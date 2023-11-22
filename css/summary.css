@@ -1,0 +1,263 @@
+.header-disign {
+    display: flex;
+    align-items: center;
+    margin: unset;
+}
+
+header h2 {
+    margin-right: 2.5rem;
+    font-size: 3.5rem;
+}
+
+header h3 {
+    font-size: 1.5rem;
+    margin: 1rem 1rem 1rem 2.5rem;
+    color: rgb(42, 54, 71);
+}
+
+main h4 {
+    font-size: 2.7rem;
+    margin: 0rem;
+    color: rgb(42, 54, 71);
+}
+
+main h5 {
+    color: rgb(42, 171, 226);
+    font-size: 4rem;
+    margin: 0rem;
+}
+
+main span {
+    font-size: 1.3rem;
+    color: rgb(42, 54, 71);
+    transition: 125ms ease-in-out;
+}
+
+main p {
+    font-size: 3rem;
+    color: rgb(42, 54, 71);
+    margin: 0.2rem;
+    transition: 125ms ease-in-out;
+}
+
+.summary-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.label {
+    font-size: 1rem;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    /* margin: 10rem 0rem 0rem 1rem;*/
+}
+
+.right-content {
+    margin: 25rem 1rem 1rem 1rem;
+}
+
+.line-header-color {
+    border-left: 0.3rem solid rgb(42, 171, 226);
+}
+
+.box-design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgb(212, 212, 213);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: white;
+    cursor: pointer;
+    transition: 125ms ease-in-out;
+}
+
+.box-design:hover {
+    transition: 125ms ease-in-out;
+    background-color: rgb(42, 54, 71);
+    color: white;
+}
+
+.box-design:hover p,
+.box-design:hover span {
+    color: white;
+    transition: 125ms ease-in-out;
+}
+
+.direction-all-tasks {
+    display: flex;
+    justify-content: center;
+}
+
+.urgent-tasks-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.urgunt-task-position {
+    padding-right: 6rem;
+}
+
+.deadline-task-position {
+    padding-left: 6rem;
+    text-align: left;
+}
+
+.border-urgend-task {
+    border-right: 0.16rem solid rgb(209, 209, 209);
+}
+
+.icons-container {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.icons-container img {
+    max-height: 3.5rem;
+}
+
+.box-design .hover-image {
+    display: none;
+}
+
+.box-design:hover .task-image {
+    display: none;
+    transition: 125ms ease-in-out;
+}
+
+.box-design:hover .hover-image {
+    display: inline-block;
+    transition: 125ms ease-in-out;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wd-upper-tasks {
+    width: 32%;
+}
+
+.wd-lower-tasks {
+    width: 50%;
+}
+
+/****** Responsive ******/
+@media (max-width:1570px) {
+    main h4 {
+        font-size: 2rem;
+    }
+
+    main h5 {
+        font-size: 3rem;
+    }
+
+    .header-disign {
+        margin-top: -3rem;
+    }
+}
+
+@media(max-width: 1450px) {
+    .right-content {
+        display: none;
+    }
+}
+
+@media(max-width: 720px), (max-height: 870px) {
+    header h2 {
+        font-size: 3rem;
+    }
+
+    header h3 {
+        font-size: 1.3rem;
+    }
+
+    main p {
+        font-size: 2rem;
+    }
+
+    main span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:600px) {
+    .header-disign {
+        display: flex;
+        align-items: center;
+        /* margin: unset; */
+        flex-direction: column;
+        margin-bottom: 3rem;
+        margin-right: 7rem;
+        margin-top: unset;
+
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        height: unset !important;
+        /* height: calc(45vh - 90px); */
+        /* margin: 0rem 4rem 0rem 4rem; */
+    }
+
+    header h3 {
+        margin-left: 0rem;
+        margin-top: -1rem;
+        font-size: 1.3rem;
+        border-bottom: 0.3rem solid rgb(42, 171, 226);
+    }
+
+    .line-header-color {
+        border-left: unset;
+    }
+
+    .icons-container img {
+        max-height: 2.5rem;
+    }
+
+    .urgunt-task-position {
+        padding-right: 3rem;
+    }
+
+    .deadline-task-position {
+        padding-left: 3rem;
+    }
+}
+
+@media (max-width:420px) {
+    .header-disign {
+        margin-right: 5rem;
+    }
+
+    .box-design {
+        padding: 0.6rem;
+    }
+
+    .label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-disign {
+        margin-right: 3rem;
+    }
+}
+
+@media (max-height: 667px) {
+    #content {
+        overflow-y: auto;
+    }
+}

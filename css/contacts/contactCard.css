@@ -1,0 +1,60 @@
+:root {
+    --ellipse: 42px;
+}
+
+contact-card {
+    display: flex;
+    align-items: center;
+    padding: 0.9375rem 1.5625rem;
+    gap: 2.1875rem;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+}
+
+contact-card:hover {
+    background: linear-gradient(180deg, #f9f9f9 0%, #f0f0f0 100%);
+}
+
+.contactCardFocus {
+    background: #2a3647 !important;
+    color: white !important;
+}
+
+.contactCardFocus:hover {
+    background: #2a3647 !important;
+}
+
+.contactCardFirstLetters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*Text*/
+    font-size: 0.75rem;
+    line-height: 120%;
+    color: white;
+
+    /*Ellipse*/
+    height: var(--ellipse);
+    width: var(--ellipse);
+    border-radius: var(--ellipse);
+    border: 1px solid #fff;
+}
+
+.contactCardDivForNameAndEmail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+}
+
+.contactCardName {
+    font-size: 1.3125rem;
+    line-height: 120%;
+}
+
+.contactCardEmail {
+    font-weight: 400;
+    text-decoration: none;
+    color: #007cee;
+}
