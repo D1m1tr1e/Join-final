@@ -9,6 +9,13 @@
     renderBoardDone();
 }
 
+/**
+ * Generates and appends HTML elements for displaying a task in a board view.
+ *
+ * @param {HTMLElement} container - The container element to which the task HTML will be appended.
+ * @param {Object[]} todos - An array of tasks to be displayed.
+ * @param {number} i - The index of the task in the array.
+ */
 function templateBoardTodos(container, todos, i) {
     container.innerHTML += /*html*/`
         <div class="box-task-design" draggable="true" onclick="openTaskDetails('${todos[i]['task-id']}')" ondragstart="startDragging(${todos[i]['task-id']})" id="taskId${todos[i]["task-id"]}">
@@ -52,6 +59,13 @@ function renderBoardTodos() {
     }
 }
 
+/**
+ * Renders a progress bar for a task with subtasks.
+ *
+ * @param {Object} todos - The task object containing subtasks.
+ * @param {HTMLElement} container - The container element containing the task.
+ * @param {number} i - The index of the task in the array.
+ */
 function renderProgressBar(todos, container, i){
     let task = todos;
     let subtasks = todos.subtasks;
@@ -108,6 +122,13 @@ function getBoardTasks(status) {
     }
 }
 
+/**
+ * Generates and appends HTML elements for displaying a task in a progress view.
+ *
+ * @param {HTMLElement} container - The container element to which the task HTML will be appended.
+ * @param {Object[]} todos - An array of tasks to be displayed.
+ * @param {number} i - The index of the task in the array.
+ */
 function templateBoardProgress(container, todos, i) {
     container.innerHTML += /*html*/`
         <div class="box-task-design" draggable="true" onclick="openTaskDetails('${todos[i]['task-id']}')" ondragstart="startDragging(${todos[i]['task-id']})" id="taskId${todos[i]["task-id"]}">
@@ -137,8 +158,12 @@ function templateBoardProgress(container, todos, i) {
         `;
 }
 
-
-
+/**
+ * Gets the small priority icon based on the priority of a task.
+ *
+ * @param {Object[]} todos - An array of tasks.
+ * @param {number} i - The index of the task in the array.
+ */
 function getSmallPrio(todos, i) {
     if (todos[i]['prio'] == 'urgent' || todos[i]['prio'] == 'Urgent') {
         return '<img src="../../assets/img/icons/urgent-nofill-orange.svg"></img>';
@@ -209,6 +234,13 @@ function renderBoardFeedback() {
     }
 }
 
+/**
+ * Generates and appends HTML elements for displaying a task in a done view.
+ *
+ * @param {HTMLElement} container - The container element to which the task HTML will be appended.
+ * @param {Object[]} todos - An array of tasks to be displayed.
+ * @param {number} i - The index of the task in the array.
+ */
 function templateBoardDone(container, todos, i) {
     container.innerHTML += /*html*/`
         <div class="box-task-design" draggable="true" onclick="openTaskDetails('${todos[i]['task-id']}')" ondragstart="startDragging(${todos[i]['task-id']})" id="taskId${todos[i]["task-id"]}">
@@ -254,6 +286,13 @@ function renderBoardDone() {
 
 const statuses = ["todo", "inProgress", "feedback", "done"];
 
+/**
+ * Moves a task to the next or previous section within the task board.
+ *
+ * @param {Event} event - The event object triggering the move.
+ * @param {string} id - The ID of the task to be moved.
+ * @param {number} moveCount - The number of sections to move the task (positive for moving down, negative for moving up).
+ */
 async function moveToSection(event, id, moveCount) {
     event.stopPropagation();
     let test = allTasks[id];
@@ -313,7 +352,6 @@ async function removeHighlight(id) {
     document.getElementById(id).classList.remove('drag-area-highlight');
 }
 
-
 /**
  * removes display none of popup and calls other function to render content
  * 
@@ -325,6 +363,13 @@ function openTaskDetails(taskId) {
     getAllTaskInfo(taskId);
 }
 
+/**
+ * Generates and sets HTML elements for displaying detailed information about a task.
+ *
+ * @param {HTMLElement} container - The container element to which the task information HTML will be set.
+ * @param {string} taskId - The ID of the task.
+ * @param {Object} task - The task object containing information to be displayed.
+ */
 function templateTaskInfo(container, taskId, task) {
     container.innerHTML = /*html*/`
         <div class="task-info" id="card-detail">
@@ -380,6 +425,11 @@ function getAllTaskInfo(taskId) {
     loadSubtasks(task);
 }
 
+/**
+ * Loads and displays subtasks for a given task.
+ *
+ * @param {Object} task - The task object for which subtasks will be loaded.
+ */
 function loadSubtasks(task){
     let subtaskDiv = document.querySelector("[sub-tasks]");
     subtaskDiv.innerHTML = "";
@@ -394,6 +444,15 @@ function loadSubtasks(task){
     })
 }
 
+/**
+ * Creates HTML representation for a subtask.
+ *
+ * @param {Object} subtask - The subtask object.
+ * @param {string|undefined} isChecked - The checked attribute for completed subtasks.
+ * @param {Object} task - The task object to which the subtask belongs.
+ * @param {number} subtaskNum - The index of the subtask in the array.
+ * @returns {string} - The HTML representation of the subtask.
+ */
 function createSubtaskHTML(subtask, isChecked, task, subtaskNum) {
     return `
                 <label class="control control-checkbox">
@@ -404,6 +463,13 @@ function createSubtaskHTML(subtask, isChecked, task, subtaskNum) {
         `;
 }
 
+/**
+ * Saves the completion status of a subtask and updates the task board.
+ *
+ * @param {string} taskId - The ID of the task to which the subtask belongs.
+ * @param {number} subtaskNum - The index of the subtask in the array.
+ * @returns {Promise<void>} - A Promise that resolves when the subtask completion status is saved and the task board is updated.
+ */
 async function saveCheck(taskId, subtaskNum){
     allTasks[taskId].subtasks[subtaskNum].completed = !allTasks[taskId].subtasks[subtaskNum].completed;
     await uploadTasks();

@@ -14,8 +14,12 @@ class ContactList extends HTMLElement {
         this.loadContactsToHTML();
     }
 
-    //contact data
-
+    /**
+     * Sorts the contacts in the contact list alphabetically by name.
+     *
+     * @memberof ContactList
+     * @private
+     */
     sortContacts() {
         this.contactList.sort((a, b) => {
             let x = a.name.toLowerCase();
@@ -30,8 +34,12 @@ class ContactList extends HTMLElement {
         });
     }
 
-    //html
-
+    /**
+     * Loads the HTML structure for the contact divider.
+     *
+     * @memberof ContactList
+     * @private
+     */
     loadContactDivider() {
         //html
         this.contactDivider.appendChild(this.letter);
@@ -43,6 +51,12 @@ class ContactList extends HTMLElement {
         this.line.classList.add("contactDividerLine");
     }
 
+    /**
+     * Loads the contacts into the HTML representation.
+     *
+     * @memberof ContactList
+     * @private
+     */
     loadContactsToHTML() {
         this.innerHTML = "";
         this.contactList.forEach((contact) => {
@@ -57,8 +71,12 @@ class ContactList extends HTMLElement {
         });
     }
 
-    //remote Storage
-
+    /**
+     * Saves the contact list to remote storage.
+     *
+     * @memberof ContactList
+     * @public
+     */
     async saveToRemoteStorage() {
         let contactListForStorage = [];
         this.contactList.forEach((contact) => {
@@ -73,6 +91,12 @@ class ContactList extends HTMLElement {
         await setItem("contactList", JSON.stringify(contactListForStorage));
     }
 
+    /**
+     * Loads the contact list from remote storage.
+     *
+     * @memberof ContactList
+     * @public
+     */
     async loadFromRemoteStorage() {
         let res = await getItem("contactList");
         let contactListFromStorage = JSON.parse(res);
@@ -85,10 +109,13 @@ class ContactList extends HTMLElement {
     }
 
     /**
+     * Adds a new contact to the contact list.
      *
-     * @param name {string}
-     * @param phone {string}
-     * @param email {string}
+     * @param {string} name - The name of the contact.
+     * @param {string} phone - The phone number of the contact.
+     * @param {string} email - The email address of the contact.
+     * @memberof ContactList
+     * @public
      */
     async addContact(name, phone, email) {
         let contactToAdd = new Contact(name, phone, email);
@@ -96,11 +123,23 @@ class ContactList extends HTMLElement {
         await this.save();
     }
 
+    /**
+     * Saves the contact list and triggers sorting.
+     *
+     * @memberof ContactList
+     * @public
+     */
     async save() {
         this.sortContacts();
         await this.saveToRemoteStorage();
     }
 
+    /**
+     * Deletes the selected contact from the contact list.
+     *
+     * @memberof ContactList
+     * @public
+     */
     async delete() {
         const contactIndex = this.contactList.findIndex(
             (element) => element === selectedContact
@@ -109,6 +148,12 @@ class ContactList extends HTMLElement {
         await this.save();
     }
 
+    /**
+     * Removes the hover effect from all contact cards.
+     *
+     * @memberof ContactList
+     * @public
+     */
     removeHover() {
         this.contactList.forEach((contactCard) => {
             let checkContact =
@@ -120,4 +165,5 @@ class ContactList extends HTMLElement {
     }
 }
 
+// Defines the custom element "contact-list" using the ContactList class.
 customElements.define("contact-list", ContactList);

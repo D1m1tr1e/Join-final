@@ -5,12 +5,18 @@ let contacts = new ContactList();
 let contactDetails = new ContactDetails();
 let isContactListHidden = false;
 
+/**
+ * Asynchronously loads and updates the contact container, changing the content to the contacts template and inserting contact HTML.
+ */
 async function loadContactContainer() {
     await updateContacts();
     await changeContentHTML("../templates/contacts.html");
     insertContactHTML();
 }
 
+/**
+ * Inserts contact HTML into the contact list and contact details containers.
+ */
 function insertContactHTML() {
     let contactListContainer = document.querySelector("[contact-list]");
     let contactDetailsContainer = document.querySelector("[contact-details]");
@@ -19,6 +25,9 @@ function insertContactHTML() {
     contactDetailsContainer.appendChild(contactDetails);
 }
 
+/**
+ * Asynchronously updates the contacts by loading them from remote storage, sorting them, and loading the HTML representation.
+ */
 async function updateContacts() {
     await contacts.loadFromRemoteStorage();
     contacts.sortContacts();
@@ -40,12 +49,20 @@ async function addContact(event) {
     await updateContacts();
 }
 
+/**
+ * Asynchronously opens the edit contact modal, switches the content to the edit contact template, and loads data into the modal.
+ *
+ * @returns {Promise<void>} - A Promise that resolves when the edit contact modal is opened and data is loaded.
+ */
 async function openEditContact() {
     await switchModal("../templates/modals/edit_Contact.html", "contact");
     loadIntoModal();
     loadFirstLettersIntoModal();
 }
 
+/**
+ * Loads contact data into the form fields of the currently opened modal.
+ */
 function loadIntoModal() {
     let contactData = [
         (contactName = selectedContact.name),
@@ -63,6 +80,9 @@ function loadIntoModal() {
     }
 }
 
+/**
+ * Loads the first letters of the selected contact into the designated element in the currently opened modal.
+ */
 function loadFirstLettersIntoModal() {
     const human = document.querySelector(".human");
     human.style.backgroundColor = selectedContact.color;
@@ -89,6 +109,11 @@ async function saveContact(e) {
     contactDetails.clearHTML();
 }
 
+/**
+ * Asynchronously deletes the selected contact, hides the contact details modal, and updates the contacts.
+ *
+ * @returns {Promise<void>} - A Promise that resolves when the contact is deleted, the contact details modal is cleared, and the contacts are updated.
+ */
 async function deleteContact() {
     if (window.innerWidth < 1001) {
         mobileHideContact();
@@ -100,6 +125,9 @@ async function deleteContact() {
     await updateContacts();
 }
 
+/**
+ * Hides or shows the contact details and list on mobile, and adjusts the visibility of the "Add Contact" button.
+ */
 function mobileHideContact() {
     let contactDetails = document.querySelector("[contact-details]");
     let contactList = document.querySelector("[contact-list]");
@@ -117,8 +145,13 @@ function mobileHideContact() {
     }
 }
 
+/**
+ * Asynchronously opens the "Add Task" modal.
+ *
+ * @returns {Promise<void>} - A Promise that resolves when the "Add Task" modal is opened.
+ */
 async function openAddTask() {
-   await switchModal("add_task.html", "addTaskInContact");
+    await switchModal("add_task.html", "addTaskInContact");
 }
 
 /**

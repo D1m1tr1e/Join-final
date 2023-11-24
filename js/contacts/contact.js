@@ -48,6 +48,12 @@ class Contact extends HTMLElement {
         this.loadClickFunction();
     }
 
+     /**
+     * Gets the first letters of the contact's name.
+     *
+     * @memberof Contact
+     * @private
+     */
     getFirstLetters() {
         let positionOfSecondname = this.name.indexOf(" ");
         let letterOfFirstname = this.name.slice(0, 1).toUpperCase();
@@ -57,10 +63,22 @@ class Contact extends HTMLElement {
         this.firstLetters = letterOfFirstname + letterOfSecondname;
     }
 
+    /**
+     * Gets the sorting letter for the contact.
+     *
+     * @memberof Contact
+     * @private
+     */
     getSortingLetter() {
         this.sortingLetter = this.name.slice(0, 1).toUpperCase();
     }
 
+    /**
+     * Gets the color for the contact card.
+     *
+     * @memberof Contact
+     * @private
+     */
     getColor() {
         if (this.color === undefined) {
             let colorNumber = Math.floor(Math.random() * 7);
@@ -68,6 +86,12 @@ class Contact extends HTMLElement {
         }
     }
 
+    /**
+     * Loads the HTML structure for the contact card.
+     *
+     * @memberof Contact
+     * @private
+     */
     loadHTML() {
         this.appendChild(this.firstLettersHTML);
         this.appendChild(this.divForNameAndEmail);
@@ -75,6 +99,12 @@ class Contact extends HTMLElement {
         this.divForNameAndEmail.appendChild(this.emailHTML);
     }
 
+    /**
+     * Loads the CSS styles for the contact card.
+     *
+     * @memberof Contact
+     * @private
+     */    
     loadCSS() {
         this.firstLettersHTML.classList.add("contactCardFirstLetters");
         this.firstLettersHTML.style.backgroundColor = this.color;
@@ -83,12 +113,24 @@ class Contact extends HTMLElement {
         this.emailHTML.classList.add("contactCardEmail");
     }
 
+    /**
+     * Loads the values into the HTML elements.
+     *
+     * @memberof Contact
+     * @private
+     */
     loadValues() {
         this.firstLettersHTML.innerText = this.firstLetters;
         this.nameHTML.innerText = this.name;
         this.emailHTML.innerText = this.email;
     }
 
+    /**
+     * Loads the click function for the contact card.
+     *
+     * @memberof Contact
+     * @private
+     */
     loadClickFunction() {
         this.addEventListener("click", (e) => {
             selectedContact = e.currentTarget;
@@ -99,6 +141,11 @@ class Contact extends HTMLElement {
         });
     }
 
+    /**
+     * Reloads the contact card.
+     *
+     * @memberof Contact
+     */
     reload() {
         if (this.name) {
             this.getFirstLetters();
@@ -112,4 +159,5 @@ class Contact extends HTMLElement {
     }
 }
 
+// Defines the custom element "contact-card" using the Contact class.
 customElements.define("contact-card", Contact);

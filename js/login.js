@@ -1,5 +1,7 @@
 "use strict";
-
+/**
+ * Initializes the login process by animating the logo and loading the login form after a delay.
+ */
 function initLogin() {
     setTimeout(() => {
         let logo = document.querySelector(".logoStart");
@@ -11,6 +13,9 @@ function initLogin() {
     }, 1250);
 }
 
+/**
+ * Loads the login form into the specified container and makes it visible.
+ */
 function loadForm() {
     renderLogin();
     let container = document.getElementById("loginRender");
@@ -20,6 +25,9 @@ function loadForm() {
     renderLogin();
 }
 
+/**
+ * Renders the login form into the specified container.
+ */
 function renderLogin() {
     let container = document.getElementById("loginRender");
     container.innerHTML = generateLogin();
@@ -54,6 +62,9 @@ function generateLogin() {
 `;
 }
 
+/**
+ * Displays the forgot password view by hiding the signup box and updating the container with the forgot password form.
+ */
 function forgotPassword() {
     let container = document.getElementById("loginRender");
     let signupBox = document.querySelector(".sign-up");
@@ -79,6 +90,9 @@ function generateForgotPassword() {
     </div>`;
 }
 
+/**
+ * Renders the signup form into the specified container, clearing existing content and hiding the signup box.
+ */
 function renderSignup() {
     let container = document.getElementById("loginRender");
     container.innerHTML = "";
@@ -106,6 +120,12 @@ function generateSignup() {
     </div>`;
 }
 
+/**
+ * Loads signup data to remote storage, checks if the account with the provided email already exists,
+ * and signs up the user if the email is not already registered.
+ *
+ * @param {Event} event - The form submission event.
+ */
 async function loadSignUptoRemoteStorage(event) {
     event.preventDefault();
     let form = event.target;
@@ -120,6 +140,12 @@ async function loadSignUptoRemoteStorage(event) {
     }
 }
 
+/**
+ * Checks if an account with the given email exists in remote storage.
+ *
+ * @param {string} email - The email to check for account existence.
+ * @returns {Promise<boolean>} - A Promise that resolves to true if the account exists, false otherwise.
+ */
 async function checkAccount(email) {
     try {
         await getItem(email);
@@ -129,12 +155,22 @@ async function checkAccount(email) {
     }
 }
 
+/**
+ * Signs up the user by storing the login data in remote storage.
+ *
+ * @param {string[]} loginData - Array containing signup data (name, email, password).
+ */
 async function signUp(loginData) {
     let email = loginData[1];
     let stringifyLoginData = JSON.stringify(loginData);
     await setItem(email, stringifyLoginData);
 }
 
+/**
+ * Logs in the user by checking the provided login credentials against the stored account data.
+ *
+ * @param {Event} event - The form submission event.
+ */
 async function login(event) {
     event.preventDefault();
     let form = event.target;
@@ -148,6 +184,13 @@ async function login(event) {
     doLogin(alreadySignedUp, IsPasswordSame, loginName);
 }
 
+/**
+ * Performs the login action based on the authentication results.
+ *
+ * @param {boolean} alreadySignedUp - Indicates if the user is already signed up.
+ * @param {boolean} isPasswordSame - Indicates if the provided password matches the stored account password.
+ * @param {string} name - The name associated with the account.
+ */
 function doLogin(alreadySignedUp, isPasswordSame, name) {
     if (alreadySignedUp && isPasswordSame) {
         localStorage.setItem("accountName", name)
@@ -159,10 +202,18 @@ function doLogin(alreadySignedUp, isPasswordSame, name) {
     }
 }
 
+/**
+ * Retrieves the name associated with the current logged-in account from local storage.
+ *
+ * @returns {string|null} - The name associated with the current account, or null if not logged in.
+ */
 const getName = () => {
     return localStorage.getItem('accountName')
 }
 
+/**
+ * Toggles the display of the profile menu on clicking the profile image.
+ */
 function clickProfile() {
     let logout = document.querySelector("#menu");
     if (!logout.classList.contains("logoutShow")){
@@ -172,6 +223,10 @@ function clickProfile() {
     }
 }
 
+/**
+ * Loads the first letter of the name associated with the current account into the profile image element.
+ * Adds a click event listener to the profile image for displaying the profile menu.
+ */
 function loadLetter() {
     let name = getName()
     let firstLetter = name.slice(0, 1);
@@ -180,6 +235,9 @@ function loadLetter() {
     profileButton.addEventListener("click", clickProfile)
 }
 
+/**
+ * Loads the name associated with the current account into the specified HTML element.
+ */
 function loadName() {
     let name = getName()
     let nameElement = document.querySelector('h5')
@@ -188,6 +246,9 @@ function loadName() {
     }
 }
 
+/**
+ * Sets the account name to "Guest" in local storage.
+ */
 function loadGuestLogin() {
     localStorage.setItem("accountName", "Guest");
 }

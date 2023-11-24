@@ -1,8 +1,7 @@
 /**
  * This function is for usage of html-templates. it fetches the needed template and places it in main.html
  */
-
- async function includeHTML() {
+async function includeHTML() {
     let includeElements = document.querySelectorAll("[w3-include-html]");
     for (let i = 0; i < includeElements.length; i++) {
         const element = includeElements[i];
@@ -21,7 +20,6 @@
  *
  * @param {string} link relative path to the page to load
  */
-
 async function changeContentHTML(link) {
     document.getElementById("content").setAttribute("w3-include-html", link);
     if(link === '../templates/summary.html') {

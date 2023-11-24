@@ -90,8 +90,7 @@ function renderFeedbackTasks() {
         if (element.status === 'feedback') {
             counter++;
         }
-    }
-    ;
+    };
     feedbackTasks.innerHTML = `
         <p>${counter}</p>
         <span>Awaiting<br>Feedback</span>
@@ -109,8 +108,7 @@ function renderProgressTasks() {
         if (element.status === "inProgress") {
             counter++;
         }
-    }
-    ;
+    };
     progressTasks.innerHTML = `
         <p>${counter}</p>
         <span>Tasks in <br> Progress</span>
@@ -130,11 +128,9 @@ function renderprioTasks() {
             counter++;
             dueDate = element.dueDate;
         }
-    }
-    ;
+    };
     content.innerText = `${counter}`;
     convertToDateObject(dueDate);
-
 }
 
 /**

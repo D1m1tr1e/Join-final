@@ -14,7 +14,6 @@ async function setItem(key, value) {
         console.error("Der Schlüssel darf nicht leer oder undefiniert sein.");
         return;
     }
-    console.log('das ist mein SetItem Key',key);
     const payload = { key, value, token: STORAGE_TOKEN };
     return fetch(STORAGE_URL, { method: 'POST', body: JSON.stringify(payload) })
         .then(res => res.json());
@@ -28,7 +27,6 @@ async function setItem(key, value) {
  */
 async function getItem(key) {
     const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;   
-    console.log('Das ist mein getItem key', key);
     return fetch(url).then(res => res.json()).then(res => {
         if (res.data) {
             return res.data.value;
@@ -89,7 +87,6 @@ async function redirectToBoard() {
 async function uploadTasks() {
     await setItem('allTasks', JSON.stringify(allTasks));
 }
-
 
 /**
  * This function collects all subtasks from input an pushes it into an array of subtasks

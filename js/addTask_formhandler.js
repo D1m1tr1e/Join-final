@@ -27,6 +27,7 @@ async function loadContactsStorage() {
 }
 
 loadContactsStorage();
+
 /**
  * function to toggle dropdown of contact assigning
  */
@@ -46,6 +47,9 @@ function toggleAssigning() {
     renderContacts();
 }
 
+/**
+ * function to toggle dropdown of contact assigning
+ */
 function toggleEditAssigning(taskId) {
     const dropdownArrow = document.querySelector('#contacts-input span');
     const selection = document.querySelector('.contacts-selection');
@@ -60,6 +64,13 @@ function toggleEditAssigning(taskId) {
     preCheckedContacts(taskId);
 }
 
+/**
+ * Pre-checks the contacts associated with a task in a task list.
+ *
+ * @param {string} taskId - The ID of the task for which contacts are pre-checked.
+ * @returns {void}
+ * @function
+ */
 function preCheckedContacts(taskId) {
     const assignings = allTasks[taskId]['assignedTo'];
     assignings.forEach(contact => {
@@ -85,6 +96,9 @@ function renderContacts() {
     }
 }
 
+/**
+ * function to render contacts in dropdown list
+ */
 function renderEditableContacts(taskId) {
     let list = document.getElementById('contact-selection');
     list.innerHTML = '';
@@ -113,7 +127,6 @@ function changeFormIcons(formElement) {
         list.classList.add('mtop-n50');
     }
 }
-
 
 /**
  * this function stops the input of form element
@@ -157,7 +170,6 @@ function cancelInput(formElement) {
 /**
  * function to show input field for new contact invite
  */
-
 function inviteContact() {
     toggleAssigning();
     let placeholder = document.getElementById('contacts-input');
@@ -346,6 +358,12 @@ function renderCategorys() {
     }
 }
 
+/**
+ * Prevents selection of past dates by setting the minimum allowed date for a specified input element.
+ *
+ * @returns {void}
+ * @function
+ */
 function preventPastDate() {
     document.getElementById("due-date").setAttribute("min", today);
 }

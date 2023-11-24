@@ -30,8 +30,12 @@ class ContactDetails extends HTMLElement {
         this.loadTitle();
     }
 
-    //loading functions
-
+    /**
+     * Loads the title section into the details.
+     *
+     * @memberof ContactDetails
+     * @private
+     */
     loadTitle() {
         this.appendChild(this.title);
         this.title.appendChild(this.titleName);
@@ -44,6 +48,12 @@ class ContactDetails extends HTMLElement {
         this.title.classList.add("contactDetailsTitle");
     }
 
+    /**
+     * Updates the contact details and refreshes the display.
+     *
+     * @memberof ContactDetails
+     * @public
+     */
     updateContact() {
         this.clearHTML();
         this.reloadContactData();
@@ -54,6 +64,12 @@ class ContactDetails extends HTMLElement {
         this.loadHover();
     }
 
+    /**
+     * Clears the HTML content of various sections in the details.
+     *
+     * @memberof ContactDetails
+     * @private
+     */
     clearHTML() {
         this.firstRow.innerHTML = "";
         this.name.innerHTML = "";
@@ -62,6 +78,12 @@ class ContactDetails extends HTMLElement {
         this.nameAndTaskContainer.innerHTML = '';
     }
 
+    /**
+     * Reloads the contact data for display.
+     *
+     * @memberof ContactDetails
+     * @private
+     */
     reloadContactData() {
         this.cloneOfSelectedContact = selectedContact.cloneNode(true);
         this.firstLetters = this.cloneOfSelectedContact.firstChild;
@@ -69,6 +91,12 @@ class ContactDetails extends HTMLElement {
         this.email = this.cloneOfSelectedContact.children[1].children[1];
     }
 
+    /**
+     * Loads the rows into the details.
+     *
+     * @memberof ContactDetails
+     * @private
+     */
     loadRows() {
         this.appendChild(this.firstRow);
         this.appendChild(this.secondRow);
@@ -79,6 +107,12 @@ class ContactDetails extends HTMLElement {
         this.appendChild(this.editButton);
     }
 
+    /**
+     * Loads values into various HTML elements.
+     *
+     * @memberof ContactDetails
+     * @private
+     */
     loadValues() {
         this.addTask.src = "../../assets/img/icons/contact/addTask.svg";
         this.editContact.src = "../../assets/img/icons/contact/editContact.svg";
@@ -96,6 +130,12 @@ class ContactDetails extends HTMLElement {
         this.addTask.addEventListener("click", openAddTask)
     }
 
+    /**
+     * Loads CSS styles for the details.
+     *
+     * @memberof ContactDetails
+     * @private
+     */
     loadCSS() {
         this.firstRow.classList.add("firstRow");
         this.addTask.classList.add("imageButtons");
@@ -111,6 +151,12 @@ class ContactDetails extends HTMLElement {
         this.editButton.classList.add("editContactMobile")
     }
 
+    /**
+     * Loads the contact details into the display.
+     *
+     * @memberof ContactDetails
+     * @private
+     */
     loadContact() {
         //firstLetters
         this.firstRow.appendChild(this.firstLetters);
@@ -131,6 +177,12 @@ class ContactDetails extends HTMLElement {
         this.thirdRow.appendChild(this.phone);
     }
 
+    /**
+     * Loads hover effects for certain elements.
+     *
+     * @memberof ContactDetails
+     * @private
+     */
     loadHover() {
         this.elementHover(this.addTask, "addTask");
         this.elementHover(this.editContact, "editContact");
@@ -138,12 +190,13 @@ class ContactDetails extends HTMLElement {
         this.elementHover(this.editButton, "editContactMobile")
     }
 
-    //other functions
-
-    /**
+   /**
+     * Adds hover effect to an HTML element.
      *
-     * @param element {HTMLImageElement}
-     * @param name {string}
+     * @param {HTMLImageElement} element - The HTML element to add hover effect.
+     * @param {string} name - The name used for constructing the image source.
+     * @memberof ContactDetails
+     * @private
      */
     elementHover(element, name) {
         element.addEventListener("mouseover", (e) => {
@@ -155,6 +208,12 @@ class ContactDetails extends HTMLElement {
         });
     }
 
+    /**
+     * Checks if the details are currently displayed and adjusts the style if needed.
+     *
+     * @memberof ContactDetails
+     * @public
+     */
     checkDisplay() {
         if (this.offsetParent === null) {
             let contactDetails = document.querySelector("[contact-details]");
@@ -163,4 +222,5 @@ class ContactDetails extends HTMLElement {
     }
 }
 
+// Defines the custom element "contact-details" using the ContactDetails class.
 customElements.define("contact-details", ContactDetails);
