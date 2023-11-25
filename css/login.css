@@ -274,8 +274,8 @@
 
 @media (max-width: 1170px) {
     .sign-up {
-        top: unset;
-        right: unset;
+        /*top: unset;
+        right: unset;*/
         bottom: 2rem;
         left: calc(50% - 250px);
         margin-inline: 1rem;
@@ -284,7 +284,7 @@
 
     .logomotion {
         position: absolute !important;
-        top: -7%;
+        top: -3rem;
         transform: translate(-2rem, -1rem) scale(0.3);
         transition: all 150ms ease-out;
     }
@@ -328,9 +328,6 @@
     .sign-up p {
         font-size: 1.5rem;
     }
-
-
-
 }
 
 @media (max-width: 500px) {
@@ -435,17 +432,6 @@
     }
 }
 
-@media screen and (max-width: 500px) and (min-height: 667px){
-    .sign-up {
-        top: unset !important;
-        right: unset !important;
-    }
-    .logomotion {
-        top: -96px !important;
-        left: -52px !important;
-    }
-}
-
 @media (max-height: 1000px) {
     .loginForm {
         width: 700px;
@@ -456,7 +442,6 @@
     }
 }
 
-
 /*small Laptop*/
 @media screen and (max-device-width: 1024px) {
     .logomotion {
@@ -464,11 +449,11 @@
     }
 
     .login-bg img {
-        top: -80px;
-        left: -30px;
+        top: 20px;
+        left: 30px;
     }
     .sign-up {
-        top: -40px;
+        top: 5rem;
     }
     .sign-up p {
         font-size: 1.5rem;
@@ -481,9 +466,56 @@
 
 @media (max-width: 1440px) {
     .sign-up p{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     .sign-up .login-btn {
-        padding: 0;
+        padding: 0rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .sign-up p{
+        font-size: 0.8rem;
+    }
+    .sign-up .login-btn {
+        font-size: 0.8rem;
+        min-width: unset;
+        height: unset;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) and (min-height: 667px){
+    .sign-up {
+        top: unset !important;
+        right: unset !important;
+    }
+    .sign-up p {
+        font-size: 1.3rem;
+    }
+
+    .sign-up .login-btn {
+        font-size: 1.3rem;
+    }
+    .logomotion {
+        top: -96px !important;
+        left: -52px !important;
+    }
+}
+
+@media screen and (max-width: 375px) and (min-height: 667px){
+    .sign-up p {
+        font-size: 1.0rem;
+    }
+    
+    .sign-up{
+        height: unset;
+        bottom: 1rem;
+        left: calc(50% - 145px);
+    }
+
+    .sign-up .login-btn {
+        font-size: 1rem;
     }
 }

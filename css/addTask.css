@@ -1,4 +1,4 @@
-.toFlexInTheMiddle{
+.toFlexInTheMiddle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +61,8 @@
 
 
 .date-input {
-    height: 50px;;
+    height: 50px;
+    ;
     box-sizing: border-box;
     width: 100%;
 }
@@ -96,11 +97,10 @@ input {
     box-shadow: 0px 4px 4px 0px #00000040;
 }
 
-
-
 .inviteContactBtn {
     display: flex;
-    height: 50px;;
+    height: 50px;
+    ;
     align-items: center;
     position: absolute;
     top: 38px;
@@ -125,7 +125,7 @@ input {
     background-color: #d1d1d1;
 }
 
-.contacts-selection #contact-selection div:last-child{
+.contacts-selection #contact-selection div:last-child {
     border-bottom: none;
     font-size: 1.2rem;
 }
@@ -133,8 +133,8 @@ input {
 [type="checkbox"] {
     display: flex;
     flex-direction: row;
-    width: 15px!important;
-    height: 15px!important;
+    width: 15px !important;
+    height: 15px !important;
     justify-content: space-between;
 }
 
@@ -143,6 +143,7 @@ input {
     flex-direction: row;
     justify-content: space-between;
 }
+
 .contact-item label {
     display: flex;
     justify-content: space-between;
@@ -162,8 +163,9 @@ input {
 }
 
 .dropdown-check {
-    height: 50px;;
-    width: 50px!important;
+    height: 50px;
+    ;
+    width: 50px !important;
     margin-right: -15px;
 }
 
@@ -171,6 +173,7 @@ input {
     height: 15px;
     width: 1080px;
 }
+
 .contacts-selection li input {
     width: 50px !important;
 }
@@ -195,7 +198,7 @@ input {
 }
 
 .addTaskBtns {
-    position: absolute;   
+    position: absolute;
     width: 50px;
     display: flex;
     top: 41px;
@@ -220,7 +223,7 @@ input {
     position: relative;
 }
 
-#category-selection li{
+#category-selection li {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -246,9 +249,10 @@ input {
 
 .createCatBtn {
     position: absolute;
-    display: flex; 
+    display: flex;
     align-items: center;
-    height: 50px;;
+    height: 50px;
+    ;
     top: 38px;
     right: 15px;
 }
@@ -324,7 +328,7 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .prio-buttons div {
@@ -412,6 +416,30 @@ input {
     left: 1.5rem;
 }
 
-.content-wrapper{
+.content-wrapper {
     max-width: 1080px;
+}
+
+@media (max-width: 1170px) {
+    .mobile-wd {
+        width: 78% !important;
+    }
+
+    .prio-buttons {
+        justify-content: unset;
+        width: 78% !important;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 990px) {
+    .mobile-wd {
+        width: 100% !important;
+    }
+
+    .prio-buttons {
+        justify-content: space-between !important;
+        width: 100% !important;
+        gap: unset !important;
+    }
 }
