@@ -17,7 +17,6 @@ class ContactDetails extends HTMLElement {
 
     secondRow = document.createElement("div");
     editContact = document.createElement("img");
-    delContact = document.createElement("img")
 
     thirdRow = document.createElement("div");
     phone = document.createElement("a");
@@ -116,16 +115,15 @@ class ContactDetails extends HTMLElement {
      */
     loadValues() {
         this.addTask.src = "../../assets/img/icons/contact/addTask.svg";
-        this.editContact.src = "../../assets/img/icons/delete-bin-black.svg";
-        this.delContact.src = "../../assets/img/icons/contact/.scv"
-        this.arrowButton.src ="../../assets/img/icons/contact/arrow-left-line.svg";
+        this.editContact.src = "../../assets/img/icons/contact/editContact.svg";
+        this.arrowButton.src =
+            "../../assets/img/icons/contact/arrow-left-line.svg";
         this.trashbutton.src = "../../assets/img/icons/contact/trash.svg";
         this.editButton.src = "../../assets/img/icons/contact/editContactMobile.svg"
-
+        
         this.phone.innerHTML = selectedContact.phone;
         this.phone.href = /*html*/ `tel:${selectedContact.phone}`;
         this.editContact.addEventListener("click", openEditContact);
-        this.delContact.addEventListener("click", deleteContact);
         this.editButton.addEventListener("click", openEditContact);
         this.arrowButton.addEventListener("click", mobileHideContact);
         this.trashbutton.addEventListener("click", deleteContact);
@@ -142,7 +140,6 @@ class ContactDetails extends HTMLElement {
         this.firstRow.classList.add("firstRow");
         this.addTask.classList.add("imageButtons");
         this.editContact.classList.add("imageButtons");
-        this.delContact.classList.add("imageButtons")
         this.secondRow.classList.add("secondRow");
         this.thirdRow.classList.add("thirdRow");
         this.phone.classList.add("contactDetailsPhone");
@@ -172,7 +169,6 @@ class ContactDetails extends HTMLElement {
         //secondRow
         this.secondRow.innerText = "Contact Information";
         this.secondRow.appendChild(this.editContact);
-        this.secondRow.appendChild(this.delContact);
 
         //thirdRow
         this.thirdRow.innerHTML += "Email";
@@ -194,14 +190,14 @@ class ContactDetails extends HTMLElement {
         this.elementHover(this.editButton, "editContactMobile")
     }
 
-    /**
-      * Adds hover effect to an HTML element.
-      *
-      * @param {HTMLImageElement} element - The HTML element to add hover effect.
-      * @param {string} name - The name used for constructing the image source.
-      * @memberof ContactDetails
-      * @private
-      */
+   /**
+     * Adds hover effect to an HTML element.
+     *
+     * @param {HTMLImageElement} element - The HTML element to add hover effect.
+     * @param {string} name - The name used for constructing the image source.
+     * @memberof ContactDetails
+     * @private
+     */
     elementHover(element, name) {
         element.addEventListener("mouseover", (e) => {
             e.target.src = `../../assets/img/icons/contact/${name}Hover.svg`;
@@ -228,3 +224,4 @@ class ContactDetails extends HTMLElement {
 
 // Defines the custom element "contact-details" using the ContactDetails class.
 customElements.define("contact-details", ContactDetails);
+
