@@ -23,6 +23,7 @@ class ContactDetails extends HTMLElement {
 
     arrowButton = document.createElement("img");
     trashbutton = document.createElement("img");
+    delButton = document.createElement("img")
     editButton = document.createElement("img");
 
     constructor() {
@@ -105,6 +106,7 @@ class ContactDetails extends HTMLElement {
         this.appendChild(this.arrowButton);
         this.appendChild(this.trashbutton);
         this.appendChild(this.editButton);
+        this.appendChild(this.delButton);
     }
 
     /**
@@ -119,6 +121,7 @@ class ContactDetails extends HTMLElement {
         this.arrowButton.src =
             "../../assets/img/icons/contact/arrow-left-line.svg";
         this.trashbutton.src = "../../assets/img/icons/contact/trash.svg";
+        this.delButton.scr = "../../assets/img/icons/contact/deleteBin.svg";
         this.editButton.src = "../../assets/img/icons/contact/editContactMobile.svg"
         
         this.phone.innerHTML = selectedContact.phone;
@@ -127,6 +130,7 @@ class ContactDetails extends HTMLElement {
         this.editButton.addEventListener("click", openEditContact);
         this.arrowButton.addEventListener("click", mobileHideContact);
         this.trashbutton.addEventListener("click", deleteContact);
+        this.delButton.addEventListener("click", deleteContact);
         this.addTask.addEventListener("click", openAddTask)
     }
 
@@ -148,6 +152,7 @@ class ContactDetails extends HTMLElement {
         this.nameAndTaskContainer.classList.add("nameAndTaskContainer");
         this.arrowButton.classList.add("arrowButton");
         this.trashbutton.classList.add("trashButton");
+        this.delButton.classList.add("secondRow");
         this.editButton.classList.add("editContactMobile")
     }
 
@@ -187,6 +192,7 @@ class ContactDetails extends HTMLElement {
         this.elementHover(this.addTask, "addTask");
         this.elementHover(this.editContact, "editContact");
         this.elementHover(this.trashbutton, "trash");
+        this.elementHover(this.delButton, "deleteBin");
         this.elementHover(this.editButton, "editContactMobile")
     }
 
