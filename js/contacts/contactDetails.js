@@ -17,13 +17,13 @@ class ContactDetails extends HTMLElement {
 
     secondRow = document.createElement("div");
     editContact = document.createElement("img");
+    delButton = document.createElement("img");
 
     thirdRow = document.createElement("div");
     phone = document.createElement("a");
 
     arrowButton = document.createElement("img");
     trashbutton = document.createElement("img");
-    delButton = document.createElement("img")
     editButton = document.createElement("img");
 
     constructor() {
@@ -118,10 +118,9 @@ class ContactDetails extends HTMLElement {
     loadValues() {
         this.addTask.src = "../../assets/img/icons/contact/addTask.svg";
         this.editContact.src = "../../assets/img/icons/contact/editContact.svg";
-        this.arrowButton.src =
-            "../../assets/img/icons/contact/arrow-left-line.svg";
+        this.arrowButton.src = "../../assets/img/icons/contact/arrow-left-line.svg";
         this.trashbutton.src = "../../assets/img/icons/contact/trash.svg";
-        this.delButton.scr = "../../assets/img/icons/contact/deleteBin.svg";
+        this.delButton.src = "../../assets/img/icons/contact/deleteBin.svg";
         this.editButton.src = "../../assets/img/icons/contact/editContactMobile.svg"
         
         this.phone.innerHTML = selectedContact.phone;
@@ -144,6 +143,7 @@ class ContactDetails extends HTMLElement {
         this.firstRow.classList.add("firstRow");
         this.addTask.classList.add("imageButtons");
         this.editContact.classList.add("imageButtons");
+        this.delButton.classList.add("imageButtons");
         this.secondRow.classList.add("secondRow");
         this.thirdRow.classList.add("thirdRow");
         this.phone.classList.add("contactDetailsPhone");
@@ -152,7 +152,6 @@ class ContactDetails extends HTMLElement {
         this.nameAndTaskContainer.classList.add("nameAndTaskContainer");
         this.arrowButton.classList.add("arrowButton");
         this.trashbutton.classList.add("trashButton");
-        this.delButton.classList.add("secondRow");
         this.editButton.classList.add("editContactMobile")
     }
 
@@ -174,6 +173,7 @@ class ContactDetails extends HTMLElement {
         //secondRow
         this.secondRow.innerText = "Contact Information";
         this.secondRow.appendChild(this.editContact);
+        this.secondRow.appendChild(this.delButton);
 
         //thirdRow
         this.thirdRow.innerHTML += "Email";

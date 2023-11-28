@@ -263,7 +263,7 @@ dialog {
     align-items: center;
     gap: 10px;
     padding: 1.125rem 0.625rem;
-    border: 1px solid #2a3647;
+    border: 1px solid #2a3647 !important;
     border-radius: 10px;
     color: #2a3647;
     font-weight: 400;
