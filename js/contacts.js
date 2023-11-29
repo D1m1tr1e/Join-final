@@ -115,11 +115,12 @@ async function saveContact(e) {
  * @returns {Promise<void>} - A Promise that resolves when the contact is deleted, the contact details modal is cleared, and the contacts are updated.
  */
 async function deleteContact() {
-    if (window.innerWidth < 1001) {
+   /* if (window.innerWidth < 1001) {
         mobileHideContact();
     } else {
         await switchModal();
-    }
+    }*/
+    mobileHideContact();
     await contacts.delete();
     contactDetails.clearHTML();
     await updateContacts();

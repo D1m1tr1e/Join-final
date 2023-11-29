@@ -22,7 +22,7 @@ async function includeHTML() {
  */
 async function changeContentHTML(link) {
     document.getElementById("content").setAttribute("w3-include-html", link);
-    if(link === '../templates/summary.html') {
+    if (link === '../templates/summary.html') {
         await includeHTML();
         await initSummary();
     } else if (link.includes('../templates/board.html')) {
@@ -31,9 +31,13 @@ async function changeContentHTML(link) {
     } else if (link.includes('../templates/add_task.html')) {
         await includeHTML();
         preventPastDate();
-    } else if (link.includes('../templates/contacts.html')){
+    } else if (link.includes('../templates/contacts.html')) {
         await includeHTML();
         await updateContacts();
+    } else if (link.includes('../templates/legal_notice.html')) {
+        await includeHTML();
+    } else if (link.includes('../templates/privacy_policy.html')) {
+        await includeHTML();
     } else {
         await init();
     }

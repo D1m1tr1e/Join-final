@@ -169,11 +169,19 @@ function saveSubtask() {
 async function validateForm() {
     let title = document.getElementById('title-input');
     let description = document.getElementById('description');
-    let category = document.querySelector('.cat-picked').innerText.replace('\n<', '');
+    let categoryElement = document.querySelector('.cat-picked');
+    let category;
+
+    if (categoryElement) {
+        category = document.querySelector('.cat-picked').innerText.replace('\n<', ''); 
+    }else{
+        category = document.querySelector('#category-input').innerText.replace('\n<', ''); 
+    }
+
+    let catStat = catValidation(category);
     let date = document.getElementById('due-date');
     let titleStat = titleValidation(title);
     let descriptionStat = descriptionValidation(description);
-    let catStat = catValidation(category);
     let dateStat = dateValidation(date);
     let prioStat = prioValidation();
     if (titleStat && descriptionStat && catStat && dateStat && prioStat) {
@@ -245,7 +253,7 @@ function descriptionValidation(description) {
  */
 function catValidation(category) {
     let validationItem = document.getElementById('category-validation');
-    if (category.innerHTML == 'Choose Category<span>&lt;</span>') {
+    if (category == 'Choose Category') {
         validationItem.classList.remove('d-none')
     } else {
         validationItem.classList.add('d-none');
