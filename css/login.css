@@ -104,7 +104,7 @@
     background-size: 24px 24px;
 }
 
-[human]{
+[human] {
     background-image: url("../assets/img/icons/user.svg");
 }
 
@@ -138,6 +138,7 @@
     text-decoration: none;
     color: #29abe2;
 }
+
 .forgotPW a:hover {
     text-decoration: underline;
 }
@@ -232,12 +233,12 @@
     cursor: pointer;
 }
 
-.profileImage{
+.profileImage {
     cursor: pointer;
-    height: 3.0625rem ;
+    height: 3.0625rem;
     width: 3.0625rem;
     border-width: 3px;
-    border-color: #2A3647 ;
+    border-color: #2A3647;
     border-radius: 6rem;
     border-style: solid;
     background: none;
@@ -250,16 +251,16 @@
     justify-content: space-evenly;
 }
 
-.divForProfileImage{
+.divForProfileImage {
     position: relative;
 }
 
-.logoutShow{
+.logoutShow {
     display: unset !important;
     z-index: 3;
 }
 
-.logout{
+.logout {
     background: none;
     border: none;
     display: none;
@@ -268,7 +269,7 @@
     top: 65px;
 }
 
-.logout img{
+.logout img {
     cursor: pointer;
 }
 
@@ -306,7 +307,7 @@
         margin-top: 1rem;
         flex-direction: column;
         gap: 24px;
-        
+
     }
 
     .forgotPW {
@@ -316,11 +317,11 @@
         align-items: flex-start;
     }
 
-    .form  input {
+    .form input {
         display: block;
     }
 
-    .sign-up .login-btn{
+    .sign-up .login-btn {
         padding: .2rem .5rem;
         max-width: 130px;
     }
@@ -358,7 +359,8 @@
         transform: translate(calc(50%), calc(50vh - 100px)) scale(1);
     }
 
-    .login-btn, .guest-btn {
+    .login-btn,
+    .guest-btn {
         font-size: 1.2rem;
         box-sizing: border-box;
         padding: 5px 16px;
@@ -412,7 +414,7 @@
 
     .sign-up .login-btn {
         height: 50px !important;
-        
+
     }
 
     .logoStart {
@@ -436,6 +438,7 @@
     .loginForm {
         width: 700px;
     }
+
     .sign-up {
         top: -10px;
         right: 14px;
@@ -452,9 +455,11 @@
         top: 20px;
         left: 30px;
     }
+
     .sign-up {
         top: 5rem;
     }
+
     .sign-up p {
         font-size: 1.5rem;
     }
@@ -465,9 +470,10 @@
 }
 
 @media (max-width: 1440px) {
-    .sign-up p{
+    .sign-up p {
         font-size: 1.3rem;
     }
+
     .sign-up .login-btn {
         padding: 0rem;
         font-size: 1.3rem;
@@ -475,9 +481,10 @@
 }
 
 @media (max-width: 700px) {
-    .sign-up p{
+    .sign-up p {
         font-size: 0.8rem;
     }
+
     .sign-up .login-btn {
         font-size: 0.8rem;
         min-width: unset;
@@ -486,11 +493,12 @@
     }
 }
 
-@media screen and (max-width: 500px) and (min-height: 667px){
+@media screen and (max-width: 500px) and (min-height: 667px) {
     .sign-up {
         top: unset !important;
         right: unset !important;
     }
+
     .sign-up p {
         font-size: 1.3rem;
     }
@@ -498,18 +506,19 @@
     .sign-up .login-btn {
         font-size: 1.3rem;
     }
+
     .logomotion {
         top: -96px !important;
         left: -52px !important;
     }
 }
 
-@media screen and (max-width: 375px) and (min-height: 667px){
+@media screen and (max-width: 375px) and (min-height: 667px) {
     .sign-up p {
         font-size: 1.0rem;
     }
-    
-    .sign-up{
+
+    .sign-up {
         height: unset;
         bottom: 1rem;
         left: calc(50% - 145px);
@@ -517,5 +526,15 @@
 
     .sign-up .login-btn {
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) and (min-height: 568px) {
+    .sign-up {
+        top: -3.5rem;
+    }
+
+    .sign-up .login-btn {
+        height: 35px !important;
     }
 }
