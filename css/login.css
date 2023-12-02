@@ -2,6 +2,11 @@
     background-color: #f6f7f8;
 }
 
+.swal2-styled {
+    background-color: rgb(10, 25, 49) !important;
+    border-radius: 15px;
+}
+
 .logoStart {
     position: absolute !important;
     width: 500px;

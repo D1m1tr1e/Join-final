@@ -3,6 +3,17 @@
     border-radius: 1.875rem;
     display: flex;
     background: #fff;
+    animation: slideAnimation 0.8s ease-in-out;
+    overflow-y: hidden !important;
+}
+
+@keyframes slideAnimation {
+    from {
+        transform: translate(2000px, 0px);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
 }
 
 /*LEFT SIDE START*/

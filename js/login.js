@@ -133,7 +133,10 @@ async function loadSignUptoRemoteStorage(event) {
     let alreadySignedUp = await checkAccount(loginData[1]);
     console.log(alreadySignedUp);
     if (alreadySignedUp) {
-        alert("You already signed up");
+        swal.fire({
+            icon: "error",
+            title: "You already signed up",
+        });
     } else {
         await signUp(loginData);
         location.reload()
@@ -177,6 +180,11 @@ async function login(event) {
     let loginEmail = form.email.value;
     let loginPassword = form.password.value;
     let alreadySignedUp = await checkAccount(loginEmail);
+    
+    if (!alreadySignedUp) {
+        doLogin();
+    }
+
     let accountData = JSON.parse(await getItem(loginEmail));
     let accountPassword = accountData[2];
     let loginName = accountData[0];
@@ -196,9 +204,15 @@ function doLogin(alreadySignedUp, isPasswordSame, name) {
         localStorage.setItem("accountName", name)
         location.href = "./assets/templates/main.html"
     } else if (alreadySignedUp && !isPasswordSame) {
-        alert("Password is wrong")
+        swal.fire({
+            icon: "error",
+            title: "Password is wrong",
+        });
     } else if (!alreadySignedUp) {
-        alert("You need to sign up first");
+        swal.fire({
+            icon: "error",
+            title: "You need to sign up first",
+        });
     }
 }
 
@@ -216,7 +230,7 @@ const getName = () => {
  */
 function clickProfile() {
     let logout = document.querySelector("#menu");
-    if (!logout.classList.contains("logoutShow")){
+    if (!logout.classList.contains("logoutShow")) {
         logout.classList.add("logoutShow");
     } else {
         logout.classList.remove("logoutShow");
@@ -241,7 +255,7 @@ function loadLetter() {
 function loadName() {
     let name = getName()
     let nameElement = document.querySelector('h5')
-    if (nameElement){
+    if (nameElement) {
         nameElement.innerHTML = name;
     }
 }

@@ -31,6 +31,7 @@ async function getItem(key) {
         if (res.data) {
             return res.data.value;
         } throw `Could not find data with key "${key}".`;
+        
     });
 }
 
