@@ -206,7 +206,7 @@ function doLogin(alreadySignedUp, isPasswordSame, name) {
     } else if (alreadySignedUp && !isPasswordSame) {
         swal.fire({
             icon: "error",
-            title: "Password is wrong",
+            title: "Password or E-Mail is wrong",
         });
     } else if (!alreadySignedUp) {
         swal.fire({

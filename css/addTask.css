@@ -95,6 +95,7 @@ input {
 
 .selectedColor {
     box-shadow: 0px 4px 4px 0px #00000040;
+    border: 1px solid black;
 }
 
 .inviteContactBtn {
@@ -304,6 +305,16 @@ input {
     background-color: #0038FF;
 }
 
+.addNewCat{
+    color: red;
+    position: absolute;
+    right: -17rem;
+    left: 14rem;
+}
+
+.addNewCat span{
+    font-size: 0.9rem;
+}
 /* CATEGORY COLORS END */
 
 /* bg-colors-assignings*/
@@ -420,6 +431,11 @@ input {
     max-width: 1080px;
 }
 
+@media (max-width: 1400px) {
+    .addNewCat{
+        right: -14rem;
+    }
+}
 @media (max-width: 1170px) {
     .mobile-wd {
         width: 78% !important;
@@ -441,5 +457,11 @@ input {
         justify-content: space-between !important;
         width: 100% !important;
         gap: unset !important;
+    }
+}
+
+@media (max-width: 510px) {
+    .addNewCat{
+        right: -10rem;
     }
 }

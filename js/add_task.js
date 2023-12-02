@@ -26,12 +26,12 @@ async function setItem(key, value) {
  * @returns value of key as json
  */
 async function getItem(key) {
-    const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;   
+    const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
     return fetch(url).then(res => res.json()).then(res => {
         if (res.data) {
             return res.data.value;
         } throw `Could not find data with key "${key}".`;
-        
+
     });
 }
 
@@ -171,12 +171,13 @@ async function validateForm() {
     let title = document.getElementById('title-input');
     let description = document.getElementById('description');
     let categoryElement = document.querySelector('.cat-picked');
+    await checkNewCatValue();
     let category;
 
     if (categoryElement) {
-        category = document.querySelector('.cat-picked').innerText.replace('\n<', ''); 
-    }else{
-        category = document.querySelector('#category-input').innerText.replace('\n<', ''); 
+        category = document.querySelector('.cat-picked').innerText.replace('\n<', '');
+    } else {
+        category = document.querySelector('#category-input').innerText.replace('\n<', '');
     }
 
     let catStat = catValidation(category);
@@ -189,6 +190,16 @@ async function validateForm() {
         await createNewTask();
         await checkIfModal();
         await showNotification();
+    }
+}
+
+async function checkNewCatValue() {
+    let catTitle = document.querySelector('.addCategoryInput').value;
+    let validationItem = document.getElementById('category-validation');
+    // Überprüfen Sie, ob der Kategorie-Titel leer ist
+    if (catTitle.trim() === '') {
+        return;
+    } else {
     }
 }
 
