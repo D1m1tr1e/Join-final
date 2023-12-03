@@ -173,13 +173,11 @@ async function validateForm() {
     let categoryElement = document.querySelector('.cat-picked');
     await checkNewCatValue();
     let category;
-
     if (categoryElement) {
         category = document.querySelector('.cat-picked').innerText.replace('\n<', '');
     } else {
         category = document.querySelector('#category-input').innerText.replace('\n<', '');
     }
-
     let catStat = catValidation(category);
     let date = document.getElementById('due-date');
     let titleStat = titleValidation(title);
@@ -195,11 +193,12 @@ async function validateForm() {
 
 async function checkNewCatValue() {
     let catTitle = document.querySelector('.addCategoryInput').value;
-    let validationItem = document.getElementById('category-validation');
-    // Überprüfen Sie, ob der Kategorie-Titel leer ist
+    console.log('checkNewCatValue called with catTitle:', catTitle);
+
     if (catTitle.trim() === '') {
+        document.getElementById('newCatName').classList.remove('d-none');
+        document.getElementById('category-validation').classList.add('d-none');
         return;
-    } else {
     }
 }
 

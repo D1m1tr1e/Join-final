@@ -3,21 +3,20 @@
     border-radius: 1.875rem;
     display: flex;
     background: #fff;
-    animation: slideAnimation 0.8s ease-in-out;
-    overflow-y: hidden !important;
+    animation: slideAnimationIn 0.8s ease-in-out;
+    overflow: hidden;
 }
 
-@keyframes slideAnimation {
+@keyframes slideAnimationIn {
     from {
-        transform: translate(2000px, 0px);
+        transform: translate(-100%);
     }
     to {
-        transform: translate(0px, 0px);
+        transform: translate(0%);
     }
 }
 
 /*LEFT SIDE START*/
-
 .leftSide {
     background: #2a3647;
     display: flex;

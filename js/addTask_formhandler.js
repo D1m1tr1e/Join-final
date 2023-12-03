@@ -210,7 +210,6 @@ function pickCatColor(color) {
     for (let i = 0; i < colorlist.length; i++) {
         colorlist[i].classList.remove('selectedColor');
     }
-
     let pickedColor = document.querySelector(`.${color}`);
     pickedColor.classList.add('selectedColor');
 }
@@ -218,10 +217,17 @@ function pickCatColor(color) {
 /**
  * function to save new category
  */
-function saveNewCat() {
+ function saveNewCat() {
     let contactDD = document.querySelector('.contact-dropdown');
     let catTitle = document.querySelector('.addCategoryInput').value;
-    let catColor = document.querySelector('.selectedColor').classList[0];
+
+    let selectedColorElement = document.querySelector('.selectedColor');
+    if (!selectedColorElement) {
+        document.getElementById('newCatColor').classList.remove('d-none');
+        return;
+    }
+
+    let catColor = selectedColorElement.classList[0];
     let newCategory = {
         name: catTitle,
         color: catColor
@@ -233,6 +239,7 @@ function saveNewCat() {
     chosenCategory(catTitle);
     cancelInput('cat');
 }
+
 
 /**
  * this function is called after saving new category. its job is to show the new category as picked category
