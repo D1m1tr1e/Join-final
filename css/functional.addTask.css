@@ -14,7 +14,7 @@
     bottom: -100px;
     transform: scale(0);
     transition: all 250ms ease-in-out;
-    
+
 }
 
 .active-note {
@@ -58,7 +58,8 @@
 
 
 .addtask-form-container input {
-    height: 50px;;
+    height: 50px;
+    ;
     border-radius: 8px;
     padding-left: 1rem;
     border: 2px solid #d1d1d1;
@@ -126,7 +127,8 @@
     justify-content: space-between;
     padding: 1rem;
     font-size: 1.2rem;
-    height: 50px;;
+    height: 50px;
+    ;
     background-color: white;
     align-items: center;
     box-sizing: border-box;
@@ -150,7 +152,7 @@
 .dropdown-placeholder span {
     font-weight: bold;
     color: black;
-    
+
 }
 
 .active-arrow {
@@ -198,7 +200,7 @@
     background-color: #d1d1d1;
 }
 
-.item-selection ul li:last-child{
+.item-selection ul li:last-child {
     border-bottom: none;
 }
 
@@ -254,7 +256,8 @@
     margin-top: 5rem;
 }
 
-#layerForContactDD, #layerForCats {
+#layerForContactDD,
+#layerForCats {
     position: absolute;
     top: 0;
     left: 0;
@@ -284,7 +287,7 @@
 
 #contact-selection::-webkit-scrollbar-thumb {
     border-radius: 3px;
-    background-color: rgb(41,171,226);
+    background-color: rgb(41, 171, 226);
 }
 
 #category-selection::-webkit-scrollbar {
@@ -293,7 +296,7 @@
 
 #category-selection::-webkit-scrollbar-thumb {
     border-radius: 3px;
-    background-color: rgb(41,171,226);
+    background-color: rgb(41, 171, 226);
 }
 
 .mtop-n50 {
@@ -311,8 +314,9 @@
     background-color: #ffffff;
 }
 
-.modalView #layerForCats, #layerForContactDD {
-    display:none;
+.modalView #layerForCats,
+#layerForContactDD {
+    display: none;
 }
 
 .modalView .addtask-form-container {
@@ -321,4 +325,27 @@
 
 #content {
     overflow-y: hidden;
+}
+
+@media (max-width: 1170px) {
+
+    .item-selection,
+    .contacts-selection {
+        width: 78% !important;
+    }
+
+    .addtask-form-container input{
+        width: 78% !important;
+    }
+}
+
+@media (max-width: 990px) {
+
+    .item-selection,
+    .contacts-selection {
+        width: 100% !important;
+    }
+    .addtask-form-container input{
+        width: 100% !important;
+    }
 }
