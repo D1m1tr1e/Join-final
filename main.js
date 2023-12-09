@@ -18,17 +18,34 @@ async function init() {
  */
 async function switchModal(modalLink, page) {
     const modal = document.querySelector("dialog");
-    if (modalLink) {
-        modal.setAttribute("w3-include-html", modalLink);
-        await includeHTML();
-    }
-    checkCurrentPage(page);
-    if (modal.open) {
-        modal.close();
+
+    // Prüfe, ob modalLink und page bestimmte Werte haben
+    if (modalLink === 'add_task.html' && page === 'addtask') {
+        // Führe den Code aus, der ohne loadOutsideClickForModal() laufen soll
+        if (modalLink) {
+            modal.setAttribute("w3-include-html", modalLink);
+            await includeHTML();
+        }
+        checkCurrentPage(page);
+        if (modal.open) {
+            modal.close();
+        } else {
+            modal.showModal();
+        }
     } else {
-        modal.showModal();
+        // Führe den regulären Code aus und rufe loadOutsideClickForModal() auf
+        if (modalLink) {
+            modal.setAttribute("w3-include-html", modalLink);
+            await includeHTML();
+        }
+        checkCurrentPage(page);
+        if (modal.open) {
+            modal.close();
+        } else {
+            modal.showModal();
+        }
+        loadOutsideClickForModal();
     }
-    loadOutsideClickForModal();
 }
 
 /**
@@ -55,9 +72,11 @@ function checkCurrentPage(page) {
 function modalAddtask() {
     let addTask = document.querySelector(".taskarea");
     let btn = document.querySelector(".mobile-close");
+    let normalBtn = document.querySelector(".close-btn-container");
     if (addTask.classList.contains("modalView")) {
         addTask.classList.remove("modalView");
         btn.classList.add("d-none");
+        normalBtn.classList.remove('d-none');
     } else {
         addTask.classList.add("modalView");
         btn.classList.remove("d-none");

@@ -3,6 +3,12 @@
         <div class="content-wrapper">
             <div class="mobile-HL">Kanban Project Management Tool</div>
             <h1>Add Task</h1>
+
+<!--DAS MUSS HIER WEG UND INS TEMPLATE REIN WEIL BUTTON AUF ADD TASK SEITE ZU SEHEN IST-->
+            <div class="close-btn-container" id="close-btn-AddTask-Board" onclick="switchModal('add_task.html', 'addtask'), initBoard()">
+                <img src="../../assets/img/icons/cross.svg" alt="Close button">
+            </div>
+
             <div class="addtask-form-container">
                 <div id="layerForContactDD" class="d-none" onclick="toggleAssigning()"></div>
                 <div id="layerForCats" class="d-none" onclick="toggleDropdown()"></div>
@@ -25,7 +31,7 @@
                             <div class="invalid d-none" id="category-validation">This field is required</div>
                             <input class="addCategoryInput d-none" placeholder="Enter category name" type="text">
                             <div class="createCatBtn d-none">
-                                <img src="../img/icons/cancel.svg" class="cancel" onclick="cancelInput('cat')">
+                                <img src="../img/icons/cancel.svg" class="add-new-cat-cancel" onclick="cancelInput('cat')">
                                 <img src="../img/icons/check_dark.svg" class="check" onclick="saveNewCat()">
                             </div>
                             <div class="category-colors d-none">
@@ -61,7 +67,6 @@
                                     <div class="contact-item"><label for="Testkontakt-2">Testkontakt 2<input class="dropdown-check" type="checkbox" id="Testkontakt-2"></label></div>
                                     <div class="contact-item"><label for="Testkontakt-3">Testkontakt 3<input class="dropdown-check" type="checkbox" id="Testkontakt-3"></label></div>
                                     <div class="contact-item"><label for="Testkontakt-4">Testkontakt 4<input class="dropdown-check" type="checkbox" id="Testkontakt-4"></label></div>
-                    
                                 </div>
                             </div>
                         </div>
@@ -69,10 +74,7 @@
                 </form>
                 <div class="vertical-divider"></div>
 
-
                 <!-- right side -->
-
-
                 <form onsubmit="" class="right-form">
                     <div class="form-item">
                         <label for="due-date">Due Date</label>
@@ -95,14 +97,13 @@
                         <div class="invalid d-none" id="prio-validation">This field is required</div>
                     </div>
 
-
                     <div class="form-item">
                         <div class="dropdown">
                             <div class="form-title">Subtasks</div>
                             <div class="dropdown-placeholder mobile-wd" id="subtask-placeholder" onclick="changeFormIcons('subtask')">Add Subtask<span>&plus;</span></div>
                             <input type="text" class="d-none subtask-input" id="subtask-value" placeholder="Enter a title">
                             <div class="addTaskBtns d-none">
-                                <img src="../img/icons/cancel.svg" class="cancel" onclick="cancelInput('subtask')">
+                                <img src="../img/icons/cancel.svg" class="sub-task-cancel" onclick="cancelInput('subtask')">
                                 <img src="../img/icons/check_dark.svg" class="check" onclick="saveSubtask()">
                             </div>
                         </div>
@@ -123,7 +124,6 @@
     <div class="notification" id="notification">
         Task added to clipboard <span class="icon"><img src="../img/icons/board.svg"></span>
     </div>
-
     <div class="mobile-submit" id="mobile-sub">
         <div class="submit main-btn" onclick="validateForm()">Create task <span>&check;</span></div>
     </div>

@@ -211,7 +211,9 @@ input {
     display: none;
 }
 
-.cancel {
+.cancel,
+.sub-task-cancel,
+.add-new-cat-cancel {
     border-right: 1px solid lightgrey;
     padding: 10px;
 }
@@ -305,7 +307,7 @@ input {
     background-color: #0038FF;
 }
 
-.addNewCat{
+.addNewCat {
     color: red;
     position: absolute;
     right: -5rem;
@@ -313,9 +315,10 @@ input {
     top: 1.5rem;
 }
 
-.addNewCat span{
+.addNewCat span {
     font-size: 0.9rem;
 }
+
 /* CATEGORY COLORS END */
 
 /* bg-colors-assignings*/
@@ -437,6 +440,15 @@ input {
         width: 78% !important;
     }
 
+    .dropdown-check{
+        margin-right: -38%;
+    }
+
+    .addTaskBtns,
+    .createCatBtn {
+        margin-right: 22%;
+    }
+
     .prio-buttons {
         justify-content: unset;
         width: 78% !important;
@@ -447,6 +459,15 @@ input {
 @media (max-width: 990px) {
     .mobile-wd {
         width: 100% !important;
+    }
+
+    .dropdown-check{
+        margin-right: -50%;
+    }
+
+    .addTaskBtns,
+    .createCatBtn {
+        margin-right: unset;
     }
 
     .prio-buttons {
