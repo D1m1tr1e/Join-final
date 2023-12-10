@@ -331,7 +331,7 @@
 
     .item-selection,
     .contacts-selection {
-        width: 78% !important;
+        width: 100% !important;
     }
 
     .addtask-form-container input{

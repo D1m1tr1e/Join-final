@@ -165,7 +165,6 @@ input {
 
 .dropdown-check {
     height: 50px;
-    ;
     width: 50px !important;
     margin-right: -15px;
 }
@@ -440,10 +439,6 @@ input {
         width: 78% !important;
     }
 
-    .dropdown-check{
-        margin-right: -38%;
-    }
-
     .addTaskBtns,
     .createCatBtn {
         margin-right: 22%;
@@ -459,10 +454,6 @@ input {
 @media (max-width: 990px) {
     .mobile-wd {
         width: 100% !important;
-    }
-
-    .dropdown-check{
-        margin-right: -50%;
     }
 
     .addTaskBtns,

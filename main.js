@@ -19,9 +19,7 @@ async function init() {
 async function switchModal(modalLink, page) {
     const modal = document.querySelector("dialog");
 
-    // Prüfe, ob modalLink und page bestimmte Werte haben
     if (modalLink === 'add_task.html' && page === 'addtask') {
-        // Führe den Code aus, der ohne loadOutsideClickForModal() laufen soll
         if (modalLink) {
             modal.setAttribute("w3-include-html", modalLink);
             await includeHTML();
@@ -33,7 +31,6 @@ async function switchModal(modalLink, page) {
             modal.showModal();
         }
     } else {
-        // Führe den regulären Code aus und rufe loadOutsideClickForModal() auf
         if (modalLink) {
             modal.setAttribute("w3-include-html", modalLink);
             await includeHTML();
@@ -76,12 +73,10 @@ function modalAddtask() {
     if (addTask.classList.contains("modalView")) {
         addTask.classList.remove("modalView");
         btn.classList.add("d-none");
-        console.log('normalBtn wird übergegen wenn ModalView da ist', normalBtn);
     } else {
         addTask.classList.add("modalView");
         btn.classList.remove("d-none");
         normalBtn.classList.remove("d-none");
-        console.log('normalBtn wird übergegen wenn ModalView nicht da ist', normalBtn);
     }
 }
 

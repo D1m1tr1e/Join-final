@@ -115,6 +115,7 @@ function getAssignedContacts() {
     for (let i = 0; i < contacts.length - 1; i++) {
         if (contacts[i].lastChild.childNodes[1].checked === true) {
             contactArray.push(contacts[i].innerText);
+            console.log('Der zugeorndete Kontakt',contacts[i]);
         }
     }
     return contactArray;

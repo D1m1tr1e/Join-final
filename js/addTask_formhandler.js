@@ -36,7 +36,7 @@ function toggleAssigning() {
     const selection = document.querySelector('.contacts-selection');
     const layer = document.getElementById('layerForContactDD');
     if (selection.classList.contains('active')) {
-        selection.classList.remove('active');
+        selection.classList.remove('active'); 
         dropdownArrow.classList.remove('active-arrow');
         layer.classList.add('d-none');
     } else {
@@ -223,7 +223,7 @@ function pickCatColor(color) {
 
     let selectedColorElement = document.querySelector('.selectedColor');
     if (!selectedColorElement) {
-        document.getElementById('newCatColor').classList.remove('d-none');
+        document.getElementById('newCatName').classList.remove('d-none');
         return;
     }
 
