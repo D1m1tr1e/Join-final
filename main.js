@@ -76,10 +76,12 @@ function modalAddtask() {
     if (addTask.classList.contains("modalView")) {
         addTask.classList.remove("modalView");
         btn.classList.add("d-none");
-        normalBtn.classList.remove('d-none');
+        console.log('normalBtn wird übergegen wenn ModalView da ist', normalBtn);
     } else {
         addTask.classList.add("modalView");
         btn.classList.remove("d-none");
+        normalBtn.classList.remove("d-none");
+        console.log('normalBtn wird übergegen wenn ModalView nicht da ist', normalBtn);
     }
 }
 
