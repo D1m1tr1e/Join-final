@@ -115,7 +115,7 @@ function getAssignedContacts() {
     for (let i = 0; i < contacts.length - 1; i++) {
         if (contacts[i].lastChild.childNodes[1].checked === true) {
             contactArray.push(contacts[i].innerText);
-            console.log('Der zugeorndete Kontakt',contacts[i]);
+            console.log('Der zugeorndete Kontakt', contacts[i]);
         }
     }
     return contactArray;
@@ -158,6 +158,11 @@ function saveSubtask() {
         <li class="subtask-item">
             <input type="checkbox" id="${task.value}" name="${task.value}" value="subtask3.value">
             <label for="${task.value}">${task.value}</label>
+               <div class="del-edit-btn-subtask" id="subtaskContent">
+                <img src="../img/icons/subtask-edit.svg" alt="">
+                |
+                <img src="../img/icons/subtask-delete.svg" alt="" onclick="deleteSubtask()">
+               </div>
         </li>
     `;
     task.value = '';

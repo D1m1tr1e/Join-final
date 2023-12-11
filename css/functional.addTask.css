@@ -218,7 +218,10 @@
     margin-right: 0;
 }
 
-
+.del-edit-btn-subtask {
+    position: absolute;
+    right: 0;
+}
 
 
 /* Contacts Dropdown */
@@ -329,7 +332,7 @@
 @media (max-width: 1170px) {
 
     .subtask-input,
-    .addCategoryInput{
+    .addCategoryInput {
         width: 78% !important;
     }
 
@@ -338,17 +341,26 @@
         width: 78% !important;
     }
 
-/*    .addtask-form-container input{
+    .del-edit-btn-subtask {
+        right: 14rem;
+    }
+
+    /*    .addtask-form-container input{
         width: 78% !important;
     }*/
 }
 
 @media (max-width: 990px) {
+
     .subtask-input,
-    .addCategoryInput{
+    .addCategoryInput {
         width: 100% !important;
     }
-/*    .item-selection,
+
+    .del-edit-btn-subtask {
+        right: 0;
+    }
+    /*    .item-selection,
     .contacts-selection {
         width: 100% !important;
     }
