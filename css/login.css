@@ -511,10 +511,14 @@
     .sign-up .login-btn {
         font-size: 1.3rem;
     }
+}
 
+@media screen and (max-width: 1100px) and (height: 873px) {
     .logomotion {
-        top: -96px !important;
-        left: -52px !important;
+        position: absolute !important;
+        top: -5rem;
+        transform: translate(-2rem, -1rem) scale(0.3);
+        transition: all 150ms ease-out;
     }
 }
 
