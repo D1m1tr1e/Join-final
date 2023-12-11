@@ -36,7 +36,7 @@ function toggleAssigning() {
     const selection = document.querySelector('.contacts-selection');
     const layer = document.getElementById('layerForContactDD');
     if (selection.classList.contains('active')) {
-        selection.classList.remove('active'); 
+        selection.classList.remove('active');
         dropdownArrow.classList.remove('active-arrow');
         layer.classList.add('d-none');
     } else {
@@ -77,7 +77,6 @@ function preCheckedContacts(taskId) {
         let idWithoutWhitespace = contact.replace(/\s/g, '');
         if (document.getElementById(idWithoutWhitespace)) {
             document.getElementById(idWithoutWhitespace).checked = true;
-            console.log(document.getElementById(idWithoutWhitespace));
         } else {
             console.log('error');
         }
@@ -217,7 +216,7 @@ function pickCatColor(color) {
 /**
  * function to save new category
  */
- function saveNewCat() {
+function saveNewCat() {
     let contactDD = document.querySelector('.contact-dropdown');
     let catTitle = document.querySelector('.addCategoryInput').value;
 
